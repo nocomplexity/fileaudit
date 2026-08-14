@@ -428,7 +428,7 @@ def _validate_tar_file(path, max_file_size, max_tar_members,
             try:
                 os.unlink(tmp_path)
             except FileNotFoundError:
-                pass  # Already removed — no data leakage.
+                pass  #NOSEC -  Already removed — no data leakage.
             except OSError:
                 # Permission denied or similar: the temp file may still exist.
                 # If we're already handling an exception, don't mask it.

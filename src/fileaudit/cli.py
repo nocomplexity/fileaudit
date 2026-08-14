@@ -136,12 +136,18 @@ class FileAudit:
             print(f"❌ Security audit failed: {e}")
             return 1
         finally:
-            # Always clean up the temporary file
-            if temp_path and os.path.exists(temp_path):
+            # Always attempt to clean up the temporary file.
+            if temp_path:
                 try:
                     os.unlink(temp_path)
-                except OSError:
-                    pass
+                except FileNotFoundError:
+                    # Already removed; nothing to do.
+                    pass  #NOSEC let is pass
+                except OSError as exc:
+                    # Log this rather than silently ignoring a potentially
+                    # security-relevant cleanup failure.
+                    print("WARNING:Failed to remove temporary file: %s", exc)
+
 
     def _download_url(self, url, timeout=30):
         """

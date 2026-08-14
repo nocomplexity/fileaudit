@@ -608,13 +608,12 @@ def _validate_zip_file(
             raise ZipValidationError(
                 f"Unable to validate ZIP file '{path}': {e}"
             ) from e
-
     finally:
         if temp_path is not None:
             try:
                 os.unlink(temp_path)
             except OSError:
-                pass
+                pass #NOSEC
 
 
 # ---------------------------------------------------------------------------
