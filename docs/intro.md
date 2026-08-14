@@ -34,7 +34,7 @@ Quick Start Guide
 :::{grid-item-card}
 {octicon}`book;4em;caption-text` **User Guide**
 ^^^
-Check out the User Guides for in-depth information on the key concepts of Python Code Audit.
+Check out the User Guides for in-depth information.
 +++
 ```{button-ref} general_use
 :color: danger
@@ -52,7 +52,7 @@ User Guide
 :::{grid-item-card}
 {octicon}`package-dependencies;4em;caption-text` **API Reference**
 ^^^
-The API reference guide contains detailed information on all methods to create your own dashboards or extra functionality for your specific needs.
+The API reference guide contains detailed information on all methods and checks possible. All possible with a simple decorator method `@validate_..()` or API call `validate..()`
 
 +++
 ```{button-ref} reference/modules
@@ -64,7 +64,7 @@ API Reference
 :::{grid-item-card}
 {octicon}`person-add;4em;caption-text` **Contributor's Guide**
 ^^^
-Want to improve the documentation? Missing a security validation? Found a bug? Improve existing functionalities?
+Want to improve the documentation? Want to add a validation for another file extension? Found a bug? Improve existing functionalities?
 The contributing guidelines will guide you!
 
 +++
