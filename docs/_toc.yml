@@ -1,0 +1,52 @@
+format: jb-book
+root: intro
+
+parts:
+- caption: Getting Started
+  chapters:    
+  - file: features
+  - file: installation  
+  - url: https://securitytesting.nocomplexity.com/ 
+    title: Security Testing for Python
+  - url: http://securitybydesign.nocomplexity.com/
+    title: Security By Design
+  - url: https://nocomplexity.github.io/pythonsecurity/
+    title: Python Security Handbook
+
+- caption: User Guide  
+  chapters:
+  - file: general_use 
+   
+
+# - caption: Architecture 
+#   chapters:       
+#   - file: architecture
+#   - file: makeitbetter
+#   - file: project_philosophy  
+#   - file: codeauditcommands  
+#   - file: changelog
+  
+  
+- caption: API Documentation
+  chapters:  
+  #- file: apidocs/api_intro
+#     sections:    
+#     - file: examples/ca_api_example_overview
+#     - file: examples/example_risk_heatmap
+#     - file: examples/example_weakness_perfile_view
+#     - file: examples/ca_api_example_checks
+#     - file: examples/ca_api_example_scanning
+#     - file: examples/ca_api_example_json
+#     - file: examples/ca_api_example_basic
+  - file: reference/modules
+  
+   
+
+- caption: About
+  chapters:  
+  - file: help
+  - file: CONTRIBUTE
+  - file: sponsors
+  - file: license
+  - file: about
+

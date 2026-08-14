@@ -1,0 +1,1157 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>NO Complexity</title>
+	<atom:link href="https://nocomplexity.com/feed/" rel="self" type="application/rss+xml" />
+	<link>https://nocomplexity.com</link>
+	<description>Simplify IT</description>
+	<lastBuildDate>Thu, 06 Aug 2026 08:03:20 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=7.0.2</generator>
+
+<image>
+	<url>https://nocomplexity.com/wp-content/uploads/2015/08/cropped-nocxlogo_512x512_sitelogo-32x32.png</url>
+	<title>NO Complexity</title>
+	<link>https://nocomplexity.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Security by Design: The Practical Alternative to Tool Overload</title>
+		<link>https://nocomplexity.com/security-by-design-practical/</link>
+		
+		<dc:creator><![CDATA[Maikel Mardjan]]></dc:creator>
+		<pubDate>Thu, 06 Aug 2026 08:03:20 +0000</pubDate>
+				<category><![CDATA[Business]]></category>
+		<category><![CDATA[Information Technology]]></category>
+		<category><![CDATA[Security]]></category>
+		<category><![CDATA[Security News]]></category>
+		<guid isPermaLink="false">https://nocomplexity.com/?p=4915</guid>
+
+					<description><![CDATA[No business is too small to be a target for cybercriminals. Small and medium-sized businesses (SMBs) are attractive prospects for ransomware. They often have limited resources for security management and have outsourced every aspect of IT. It makes little difference whether that outsourcing is very expensive or the cheapest option available. SMBs also hold valuable [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p class="has-drop-cap wp-block-paragraph">No business is too small to be a target for cybercriminals. Small and medium-sized businesses (SMBs) are attractive prospects for ransomware. They often have limited resources for security management and have outsourced every aspect of IT. It makes little difference whether that outsourcing is very expensive or the cheapest option available. SMBs also hold valuable customer data, and people remain the weakest link.</p>
+
+
+
+<span id="more-4915"></span>
+
+
+
+<p class="wp-block-paragraph">Within SMBs a typical question is: “Do we need these expensive cyber security measures?” And the core question is always: “What would actually stop us from being breached, and how much does it cost?” T<strong>he truth is that high spending on cyber security measures does not reduce the likelihood of a breach.</strong> It only increases the frustration when one occurs.</p>
+
+
+
+<p class="wp-block-paragraph">The crucial question should instead be: “How do we strengthen our security foundation without slowing the business down or spending too much on tooling that still offers no absolute guarantee?”</p>
+
+
+
+<p class="wp-block-paragraph">A stubborn <strong><em>misperception</em></strong> persists that expensive security tools and costly consultancy firms automatically make an organisation more secure. This is far from reality.</p>
+
+
+
+<p class="wp-block-paragraph">The right security tools do make a difference. However, popular modern AI-driven solutions are not the most secure option. <strong>Be conservative</strong> when selecting vital tools to protect against cyber threats. Prefer proven open-source tools that meet <a href="https://nocomplexity.github.io/securitybydesign/checklist-evalfoss/" rel="noreferrer noopener" target="_blank">minimum quality requirements</a>.</p>
+
+
+
+<p class="wp-block-paragraph">A common blind spot is the assumption that security is “implicitly” perfect in modern tools or cloud platforms such as Microsoft 365, Google Workspace or AWS. In reality, most breaches stem from misconfiguration, weak identity controls, poor access hygiene and a lack of monitoring — not from exotic hacking techniques.</p>
+
+
+
+<p class="wp-block-paragraph">It is far harder to predict and prevent sophisticated attacks than it is to build strong identity management and monitoring practices derived from a <a href="https://nocomplexity.github.io/securitybydesign/" rel="noreferrer noopener" target="_blank">security-by-design</a> approach.</p>
+
+
+
+<p class="wp-block-paragraph">A well-maintained security architecture mitigates:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Human errors: Human errors pose a serious threat and affect every business activity.</li>
+
+
+
+<li>Flaws in tools, software and hardware: Every piece of software has weaknesses, and hardware is an easy attack vector. A sound security architecture, founded on proven principles, builds resilience against the majority of common attack vectors.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Security fundamentals matter more than tools. The good news is that implementing security fundamentals is far less expensive than deploying costly security tools, which also have high implementation costs. Most commercial cybersecurity solutions are not future-proof and are hard to maintain in the long term.</p>
+
+
+
+<p class="wp-block-paragraph">The best security solutions are seldom expensive tools. Effective cybersecurity begins with creating an open, transparent security architecture based on key security-by-design principles. You simply cannot afford to have no architecture, so it is better to make it explicit. But do not make it overly complex. A good security architecture grounded in a <a href="https://nocomplexity.github.io/securitybydesign/" rel="noreferrer noopener" target="_blank">security-by-design </a>approach simply follows a <a href="https://nocomplexity.com/documents/securityarchitecture/prevention/architecturesteps.html#create-a-solution" rel="noreferrer noopener" target="_blank">few simple, proven steps</a>.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-large"><a href="https://nocomplexity.com/securitybydesign/" target="_blank" rel=" noreferrer noopener"><img fetchpriority="high" decoding="async" width="714" height="1024" src="https://nocomplexity.com/wp-content/uploads/2026/06/sbd_cover-714x1024.png" alt="" class="wp-image-4904" srcset="https://nocomplexity.com/wp-content/uploads/2026/06/sbd_cover-714x1024.png 714w, https://nocomplexity.com/wp-content/uploads/2026/06/sbd_cover-209x300.png 209w, https://nocomplexity.com/wp-content/uploads/2026/06/sbd_cover-768x1101.png 768w, https://nocomplexity.com/wp-content/uploads/2026/06/sbd_cover.png 848w" sizes="(max-width: 714px) 100vw, 714px" /></a></figure>
+
+
+
+<p class="has-text-align-center has-medium-font-size wp-block-paragraph"><em>Use this (free) <a href="https://nocomplexity.com/securitybydesign/" target="_blank" rel="noreferrer noopener">Security By Design Guide</a>!</em></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>What the Halting Problem Means for Python Security</title>
+		<link>https://nocomplexity.com/the-halting-problem/</link>
+		
+		<dc:creator><![CDATA[Maikel Mardjan]]></dc:creator>
+		<pubDate>Thu, 02 Jul 2026 16:57:34 +0000</pubDate>
+				<category><![CDATA[Security]]></category>
+		<category><![CDATA[Security News]]></category>
+		<category><![CDATA[Python]]></category>
+		<guid isPermaLink="false">https://nocomplexity.com/?p=4913</guid>
+
+					<description><![CDATA[Python code plays a central role in modern computing, yet Python applications are not immune to cybersecurity threats. Consequently, security has become a critical concern for both users and developers alike. But cybersecurity is never black or white. It is all about context. Being precise about definitions is key. A security weakness is not the [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p class="has-drop-cap wp-block-paragraph">Python code plays a central role in modern computing, yet Python applications are not immune to cybersecurity threats. Consequently, security has become a critical concern for both users and developers alike.</p>
+
+
+
+<p class="wp-block-paragraph">But cybersecurity is never black or white. It is all about context. Being precise about definitions is key. A security weakness is not the same as a vulnerability. It always depends.</p>
+
+
+
+<span id="more-4913"></span>
+
+
+
+<p class="wp-block-paragraph">Static security testing, also known as Static Application Security Testing (SAST), is a methodology that analyses an application’s source code. The purpose is to identify potential security weaknesses before running the application. One of the greatest benefits of using a SAST scanner on any program before execution is that it saves enormous amounts of time and money, as preventing security and privacy disasters is far cheaper and less complex than fixing them later.</p>
+
+
+
+<p class="wp-block-paragraph">Performing a SAST before running a program is especially essential when executing Python programs written by others. Unfortunately, this is still not common practice. Most SAST scanners are too complex, require too much time for a quick package scan on PyPI, and are expensive to use. Worst of all, even expensive, commercial Python SAST scanners are far from perfect. In the best-case scenario, you will only be disappointed. In the worst, the risk of a false sense of security is enormous. That is why you should use a<a href="https://securitytesting.nocomplexity.com/module2/toolselection/"> simple checklist</a> before using any Python security testing tool.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">To use a Python SAST scanner effectively, it is vital to make a clear distinction between a weakness and a vulnerability:</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Weakness (or potential security issue):</strong> A weakness is a flaw, error, poor design choice, or unsafe programming practice in your code that might create security problems under certain conditions. It represents an increased risk, but it is not necessarily exploitable in your specific context.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">Weaknesses do not constitute threats themselves. Instead, they provide opportunities for existing threats to exploit a system&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Vulnerability:</strong> A vulnerability is a weakness that could be exploited by an attacker to compromise the confidentiality, integrity, or availability of your system.</p>
+
+
+
+<p class="wp-block-paragraph">Many SAST scanners are marketed as being able to identify vulnerabilities hidden in source code by using static analysis to determine whether a weakness may be exploitable. They often prioritise findings using heuristics and severity models based on code patterns rather than the application&#8217;s actual deployment context. This is inherently limited for two simple reasons:&nbsp;</p>
+
+
+
+<ol class="wp-block-list">
+<li>A vulnerability is always context-dependent. No software has the ability to evaluate your entire environment (systems, networks, processes, and people), nor is it possible to feed software all of your defence-in-depth measures, which can be both technical and non-technical.</li>
+
+
+
+<li>Security software that decides whether code is suspicious or not can and will fail. Software can never determine the intent of a statement based solely on syntax or coding rules.</li>
+</ol>
+
+
+
+<p class="wp-block-paragraph">A good example is checking exception statements in Python code for possible security issues. This is a necessary step, and a good Python SAST scanner should detect problematic exception handling for you. A simple example of a potentially problematic pattern is:</p>
+
+
+
+<pre class="wp-block-code"><code>try:
+    do_some_stuff()
+except Exception:
+    pass</code></pre>
+
+
+
+<p class="wp-block-paragraph">The use of pass and continue in Python exception handling cannot be classified as inherently secure or insecure through syntax alone. Even when using advanced static analysis techniques like taint analysis or &#8220;magic&#8221; AI tools, 100% accuracy is impossible.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>Python is highly dynamic</strong>: it allows runtime behaviour that defeats full static modelling. This means the actual behaviour of a function may not be fully knowable at analysis time. At a deeper theoretical level, determining all possible runtime behaviours of arbitrary programs is undecidable. This is a consequence of the<a href="https://en.wikipedia.org/wiki/Halting_problem" target="_blank" rel="noreferrer noopener"> Halting Problem</a>: no algorithm can correctly predict the behaviour of all programs in all cases.</p>
+
+
+
+<p class="wp-block-paragraph">This means that:</p>
+
+
+
+<ul class="wp-block-list">
+<li>No static security analysis tool can always determine whether an exception suppression is safe, malicious, or just a coding error frequently seen in AI-generated Python code.</li>
+
+
+
+<li>Many SAST tools rely on heuristics, but intent is not observable in code. Because heuristics are inherently imperfect, they produce false positives (flagging safe patterns) and false negatives (missing real issues).</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">One of the reasons we started <a href="https://nocomplexity.com/codeaudit/" data-type="page" data-id="4777">Python Code Audit</a> was to create a <strong>better </strong>Python SAST scanner. We want to prevent both <strong>false positives and false negatives</strong> at all times. This is why Python Code Audit reports <strong>&#8220;potential security issues&#8221;</strong> rather than definitive security weaknesses or vulnerabilities.</p>
+
+
+
+<p class="is-style-default wp-block-paragraph">A security tool must be inherently trusted. Complex logic for calculating heuristics sooner or later leads to issues. Therefore, when using Python Code Audit, you simply get a signal if a <em>pass</em> or <em>continue </em>statement is detected in an exception clause. The number of use cases where silent exception handling is acceptable is limited. From a security point of view, you want to be informed so you can investigate further and determine the potential risk for your specific situation.</p>
+
+
+
+<blockquote class="wp-block-quote is-layout-flow wp-block-quote-is-layout-flow">
+<p class="wp-block-paragraph">Security is never black and white. Help improve <a href="https://github.com/nocomplexity/codeaudit">Python Code Audit and its documentation</a>, and make Python security more accessible for everyone.</p>
+
+
+
+<p class="wp-block-paragraph"><a href="https://nocomplexity.com/documents/codeaudit/CONTRIBUTE.html">Join the community</a> and help build the most complete, local-first Python security audit scanner.</p>
+</blockquote>
+
+
+
+<div class="wp-block-group has-custom-nocx-grey-background-color has-background has-global-padding is-layout-constrained wp-container-core-group-is-layout-9e2b0234 wp-block-group-is-layout-constrained" style="border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40);padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--50)">
+<p class="wp-block-paragraph">Skip the installation process. Use Python Code Audit directly through our web dashboard — secure, fast, and ready when you are. <strong>No setup, no dependencies, no local installs</strong>.</p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-35f06ea7 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://nocomplexity.com/codeauditapp/dashboardapp.html" target="_blank" rel="noreferrer noopener">Launch Now</a></div>
+</div>
+</div>
+
+
+
+<p class="wp-block-paragraph">More info:</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://nocomplexity.github.io/pythonsecurity/constructs/exceptions/" target="_blank" rel="noreferrer noopener">Python Security Handbook, Exception Statements</a></li>
+
+
+
+<li><a href="https://nocomplexity.com/documents/codeaudit/intro.html" target="_blank" rel="noreferrer noopener">Python Code Audit Manual</a></li>
+</ul>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe title="Python Code Audit - promo" width="500" height="281" src="https://www.youtube.com/embed/0uaNXMwK3nw?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div></figure>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Simplicity by Design: Why Python Code Audit Favours Plain HTML Reporting</title>
+		<link>https://nocomplexity.com/plain-html-reporting/</link>
+		
+		<dc:creator><![CDATA[Maikel Mardjan]]></dc:creator>
+		<pubDate>Wed, 24 Jun 2026 14:03:03 +0000</pubDate>
+				<category><![CDATA[Security]]></category>
+		<category><![CDATA[Security News]]></category>
+		<category><![CDATA[Python]]></category>
+		<guid isPermaLink="false">https://nocomplexity.com/?p=4909</guid>
+
+					<description><![CDATA[Python plays a central role in modern computing, yet Python applications are not immune to cybersecurity threats. As a result, security has become a critical concern for developers and users alike. When building Python Code Audit, a tool designed to detect weaknesses in Python code, one of my core principles was to create a simpler [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p class="has-drop-cap wp-block-paragraph">Python plays a central role in modern computing, yet Python applications are not immune to cybersecurity threats. As a result, security has become a critical concern for developers and users alike.</p>
+
+
+
+<span id="more-4909"></span>
+
+
+
+<p class="wp-block-paragraph">When building <strong><a href="https://nocomplexity.com/codeaudit/" data-type="page" data-id="4777">Python Code Audit</a></strong>, a tool designed to detect weaknesses in Python code, one of my <a href="https://nocomplexity.com/documents/0complexity/abstract.html" target="_blank" rel="noreferrer noopener">core principles</a> was to create a simpler Static Application Security Testing (SAST) scanner. </p>
+
+
+
+<p class="wp-block-paragraph"><a href="https://nocomplexity.github.io/securitybydesign/securityprinciples/" target="_blank" rel="noreferrer noopener">Simplicity is better</a> than complexity for good security, and the way results are presented matters deeply.</p>
+
+
+
+<p class="wp-block-paragraph">This is precisely why I chose a plain HTML output for the CLI version of Python Code Audit.</p>
+
+
+
+<h3 class="wp-block-heading">Security Tools Shouldn&#8217;t Introduce Risk</h3>
+
+
+
+<p class="wp-block-paragraph">Using security tools to validate your systems and applications should never introduce extra weaknesses or vulnerabilities into your landscape. However, many <a href="https://nocomplexity.com/simplifysecurity-manifesto/" data-type="post" data-id="4635">popular cybersecurity tools actually put you at risk</a> when you run them.</p>
+
+
+
+<p class="wp-block-paragraph">Since Python Code Audit uses HTML to display code snippets, you can rest assured that if malware is found in a Python file, it cannot harm you.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">Python Code Audit never executes Python programs (or any part of them) to determine a weakness. Instead, we use a proven, safe method of analysing source code by using the <a href="https://nocomplexity.github.io/pythonsecurity/fundamentals/executionmodel/" target="_blank" rel="noreferrer noopener">Python Abstract Syntax Tree (AST)</a>.</p>
+
+
+
+<h3 class="wp-block-heading">Neutralising HTML and XSS Injections</h3>
+
+
+
+<p class="wp-block-paragraph">A prevalent issue in many security applications is serving untrusted HTML inside a report. For security scanners, this is a flaw that must be prevented at all times. </p>
+
+
+
+<p class="wp-block-paragraph">To combat this, Python Code Audit displays code snippets strictly as text.&nbsp; This prevents malicious content embedded in code strings or comments from being interpreted as HTML in the browser.</p>
+
+
+
+<p class="wp-block-paragraph">We achieve this by routing the text through standard Python functionality:</p>
+
+
+
+<pre class="wp-block-code"><code>import html<br><br>html.escape(code_snippet)</code></pre>
+
+
+
+<p class="wp-block-paragraph">This converts special characters into HTML-safe entities, so dangerous characters are safely neutralised:</p>
+
+
+
+<ul class="wp-block-list">
+<li>&lt; becomes &amp;lt;</li>
+
+
+
+<li>&gt; becomes &amp;gt;</li>
+
+
+
+<li>&amp; becomes &amp;amp;</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Context Matters</h3>
+
+
+
+<p class="wp-block-paragraph">Using html.escape() protects against HTML injection. To be clear, it does <em>not</em> sanitise the underlying possible malicious Python (which isn&#8217;t necessary just for displaying it), nor does it prevent every complex flavour of XSS possible in full-blown HTML files loaded with JavaScript and CSS. So use html.escape() with care.</p>
+
+
+
+<p class="wp-block-paragraph">In security, context is everything. So for our use case applying html.escape() is sufficient. This since our only goal here is to display a few plain lines of Python source code in a simple, highly trusted HTML output. By keeping the output minimalist and properly escaped, Python Code Audit keeps your workflow completely secure. </p>
+
+
+
+<figure class="wp-block-image size-large"><a href="https://nocomplexity.com/wp-content/uploads/2026/06/noHTMLinjection.png"><img decoding="async" width="1024" height="381" src="https://nocomplexity.com/wp-content/uploads/2026/06/noHTMLinjection-1024x381.png" alt="" class="wp-image-4910" srcset="https://nocomplexity.com/wp-content/uploads/2026/06/noHTMLinjection-1024x381.png 1024w, https://nocomplexity.com/wp-content/uploads/2026/06/noHTMLinjection-300x112.png 300w, https://nocomplexity.com/wp-content/uploads/2026/06/noHTMLinjection-768x286.png 768w, https://nocomplexity.com/wp-content/uploads/2026/06/noHTMLinjection.png 1219w" sizes="(max-width: 1024px) 100vw, 1024px" /></a></figure>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-35f06ea7 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://nocomplexity.com/codeaudit/" style="border-radius:10px">Try Python Code Audit<br>A modern Python source code analyzer based on distrust.</a></div>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Rethinking Python Asserts in SAST: Insights from T-DOSE 2026</title>
+		<link>https://nocomplexity.com/python-asserts/</link>
+		
+		<dc:creator><![CDATA[Maikel Mardjan]]></dc:creator>
+		<pubDate>Thu, 11 Jun 2026 14:17:25 +0000</pubDate>
+				<category><![CDATA[Security News]]></category>
+		<category><![CDATA[Python]]></category>
+		<category><![CDATA[Security]]></category>
+		<guid isPermaLink="false">https://nocomplexity.com/?p=4897</guid>
+
+					<description><![CDATA[Recently I was at the great FOSS conference T-DOSE to learn new tech things and meet great open-minded people. After my talk about Python Code Audit. I had a very interesting discussion about the Python assert statement with some very smart security friends. But first: if you want to detect the use of Python assert [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p class="wp-block-paragraph">Recently I was at the great FOSS conference <a href="https://t-dose.org/2026/" target="_blank" rel="noreferrer noopener">T-DOSE</a> to learn new tech things and meet great open-minded people. After my <a href="https://pretalx.t-dose.org/2026/talk/P3GCLA/" target="_blank" rel="noreferrer noopener">talk about Python Code Audit</a>. I had a very interesting discussion about the Python assert statement with some very smart security friends.</p>
+
+
+
+<span id="more-4897"></span>
+
+
+
+<p class="wp-block-paragraph">But first: if you want to detect the use of Python assert in a codebase on <a href="https://PyPI.org" target="_blank" rel="noreferrer noopener">PyPI.org</a> you can just click the button:</p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-35f06ea7 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://nocomplexity.com/codeauditapp/dashboardapp.html" target="_blank" rel="noreferrer noopener">Launch Python Code Audit</a></div>
+</div>
+
+
+
+<p class="wp-block-paragraph"></p>
+
+
+
+<p class="wp-block-paragraph">To launch the 100% web version of <a href="https://nocomplexity.com/codeaudit/" data-type="page" data-id="4777">Python Code Audit</a>.</p>
+
+
+
+<p class="wp-block-paragraph">This version runs locally in your browser with no strings attached. I think it is great and simple way do a quick and good security code analysis on any codebase published on PyPI.org.</p>
+
+
+
+<p class="wp-block-paragraph">For various, especially AI-generated, Python programs you will see a lot of assert statement warnings. The reason Python Code Audit checks on the use of the assert statement is simple: misuse can lead to security vulnerabilities. The assert statement itself is not insecure, but Python Code Audit is created from a zero-trust security perspective. <strong>So I think any SAST Python scanner should make you aware if an assert statement is found within the code.</strong></p>
+
+
+
+<p class="wp-block-paragraph">The key reason from a security point of view is that assert statements can be disabled: when Python is run in optimised mode (with the `python -O` or `python -OO` flags, or by setting the `PYTHONOPTIMIZE` environment variable), assert statements are completely ignored.</p>
+
+
+
+<p class="is-style-default has-fira-code-font-family wp-block-paragraph">The special Python <strong>`__debug__`</strong>  built-in variable is also set to False when -O is used. So code that checks if <strong>__debug__</strong>: will also be removed.</p>
+
+
+
+<p class="wp-block-paragraph">This means that when using `python -O` or `python -OO`, the Python interpreter removes all assert statements from the bytecode. The consequence is that checks where your code depends on assert statements will simply vanish, leaving your application potentially vulnerable.</p>
+
+
+
+<p class="wp-block-paragraph">The nice thing about conferences and seminars is that you can have in-person discussions with people. With an open mind you will learn about each other&#8217;s opinions, especially when there is no absolute right or wrong. And in cyber security it is never black and white. Context matters!</p>
+
+
+
+<p class="wp-block-paragraph">Any discussion about why a SAST tool implements a checking rule is good. So regarding the <strong>`assert`</strong> discussion I got back to my design rationale. I created in Python Code Audit a check because I want a security researcher or security tester to be directly alerted and to investigate the code further in depth. Keep in mind that any SAST tool can only find weaknesses.</p>
+
+
+
+<p class="wp-block-paragraph">A <strong>weakness</strong> is a flaw, error, poor design choice, or unsafe programming practice in your code that might create security problems under certain conditions.</p>
+
+
+
+<p class="wp-block-paragraph">A <strong>vulnerability</strong> is a weakness that can be actually exploited by an attacker to compromise the confidentiality, integrity, or availability of your system.</p>
+
+
+
+<p class="wp-block-paragraph">There are some edge use cases thinkable when using `<strong>assert</strong>` in Python code for production can do no harm, even when code is run using the Python `-O` option.</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Use Case #1: Type/State Checking in Hot Loops (Performance Tuning)</strong></li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">You use `assert` to check an internal invariant in a performance-critical loop during development. In production, you deliberately run with `python -O` to remove the check for speed. You accept that if a bug exists, the program might silently corrupt data instead of crashing. This use case is only safe if the corrupted data cannot affect security-critical decisions. In practice, that is very hard to guarantee. From a security perspective, silent data corruption is often worse than a crash.&nbsp;</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Use Case #2: Detecting Impossible State Corruption (Fail-Fast)</strong></li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">You use `assert` to check a condition that should literally never be false if your code is bug-free. This is a &#8220;programming error detector&#8221;, not a runtime guard.</p>
+
+
+
+<p class="wp-block-paragraph">So you could argue for the use of `assert` in production code to check that code is internally consistent.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">However, the truth is that almost every running program needs some kind of input from the outside world. And validating all logic will quickly become too complicated to do from a security point of view. So better safe than sorry. Or when you do use `assert` statements in your Python production code, minimally place a <a href="https://nocomplexity.com/documents/codeaudit/markingissues.html#marking-false-positives" target="_blank" rel="noreferrer noopener">marker</a> and a comment with why, so security reviewers at least directly know that you are aware of the possible impact.</p>
+
+
+
+<p class="wp-block-paragraph">Note that preventing code weakness in Python code is only one, but simple, step in designing a good security architecture. In reality you should always practise using the <a href="https://nocomplexity.github.io/securitybydesign/securityprinciples/" target="_blank" rel="noreferrer noopener"><strong>defence in depth principle</strong></a> so that no code weakness can turn into a vulnerability without noticing.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-large is-resized"><a href="https://nocomplexity.github.io/pythonsecurity/" target="_blank" rel=" noreferrer noopener"><img decoding="async" src="https://nocomplexity.github.io/pythonsecurity/build/pythonsecurity_bookc-9d1c18268b59575be9958524c26cf62e.png" alt="" style="width:auto;height:400px"/></a></figure>
+
+
+
+<p class="wp-block-paragraph">More information:</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://nocomplexity.com/documents/codeaudit/checks/assert_check.html" target="_blank" rel="noreferrer noopener">Python Code Audit manual (assert statement &#8211; with examples!)</a></li>
+
+
+
+<li><a href="https://nvd.nist.gov/vuln/detail/CVE-2017-1000433" target="_blank" rel="noreferrer noopener">CVE-2017-1000433</a> and see the related <a href="https://github.com/IdentityPython/pysaml2/issues/451" target="_blank" rel="noreferrer noopener">issues/451</a> </li>
+
+
+
+<li><a href="https://github.com/advisories/GHSA-924m-4pmx-c67h" target="_blank" rel="noreferrer noopener">Advisory: pysaml2 Improper Authentication vulnerability </a></li>
+</ul>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Simplifying the Stack: Start Security Testing in the Browser</title>
+		<link>https://nocomplexity.com/browser-based-security-testing/</link>
+		
+		<dc:creator><![CDATA[Maikel Mardjan]]></dc:creator>
+		<pubDate>Tue, 12 May 2026 14:44:21 +0000</pubDate>
+				<category><![CDATA[Security]]></category>
+		<category><![CDATA[Security News]]></category>
+		<guid isPermaLink="false">https://nocomplexity.com/?p=4886</guid>
+
+					<description><![CDATA[Cyber security disasters still happen every day. Being security-aware is crucial, but it is not enough. So never trust, always verify! To make security validation simple, testing applications before use is a must. However, a huge drawback is the difficulty of setting up even a few simple tests. Performing basic security checks before using a [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p class="has-drop-cap wp-block-paragraph">Cyber security disasters still happen every day. Being security-aware is crucial, but it is not enough. So never trust, always verify!</p>
+
+
+
+<p class="wp-block-paragraph">To make security validation simple, testing applications before use is a must. However, a huge drawback is the difficulty of setting up even a few simple tests.</p>
+
+
+
+<span id="more-4886"></span>
+
+
+
+<p class="wp-block-paragraph">Performing basic security checks before using a website or an application is a real necessity. But inspecting websites or application code before use can be time-consuming. Traditionally, security validation has meant:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Using a dedicated environment to perform security testing</li>
+
+
+
+<li>Within that environment, installing trustworthy security validation tools</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">And determining which security tools are good enough to be trusted is a challenge in itself.</p>
+
+
+
+<p class="wp-block-paragraph">Of course, there are simple rules to help decide if a <a href="http://securitybydesign.nocomplexity.com/">security tool can be trusted</a>.</p>
+
+
+
+<p class="wp-block-paragraph">A good security product should never introduce extra vulnerabilities. However, many security products increase your cyber risk profile instead of lowering it.</p>
+
+
+
+<p class="wp-block-paragraph">Running software in your browser instead of installing it locally offers several security advantages:</p>
+
+
+
+<ol class="wp-block-list">
+<li><strong>Reduced Attack Surface</strong>: No native executables, libraries, or background services are installed on the endpoint. This eliminates risks such as local code injection, DLL hijacking, malicious registry changes, and persistence mechanisms that installed apps can introduce.</li>
+
+
+
+<li><strong>Sandboxed Execution by the Browser</strong>: The browser’s built-in sandbox (e.g., site isolation, process separation) restricts the app’s access to the operating system, file system, and other processes. Malicious code cannot easily escape to install malware or read arbitrary local files.</li>
+
+
+
+<li><strong>No Local Data Persistence (by default)</strong>: Sensitive data remains on the server, reducing the risk of leakage from lost or stolen devices.</li>
+</ol>
+
+
+
+<p class="wp-block-paragraph">To give you a head start, I collect and promote good open security solutions. Below are several excellent 100% browser-based tools that can be used without installation or registration. The code is open source, so you can also host the solution yourself.</p>
+
+
+
+<h2 class="wp-block-heading"> A small collection of directly usable online security test suites:<br></h2>
+
+
+
+<div class="wp-block-group has-custom-nocx-grey-background-color has-background is-vertical is-layout-flex wp-container-core-group-is-layout-10bed78a wp-block-group-is-layout-flex" style="border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
+<p class="wp-block-paragraph"><strong>Solution</strong> : <a href="https://nocomplexity.com/codeauditapp/dashboardapp.html" target="_blank" rel="noreferrer noopener">Python Code Audit (browser version)</a> </p>
+
+
+
+<p class="wp-block-paragraph"><strong>What is does </strong>: Python Code Audit is a tool designed to security issues in Python code. To do this Python Code Audit processes each file, builds an AST from it, and runs appropriate plugins against the AST nodes. This browser based version is a must do before installing a Python package from PyPI.org!</p>
+</div>
+
+
+
+<div class="wp-block-group has-custom-nocx-grey-background-color has-background is-vertical is-layout-flex wp-container-core-group-is-layout-10bed78a wp-block-group-is-layout-flex" style="border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
+<p class="wp-block-paragraph"><strong>Solution</strong>: <a href="https://en.internet.nl/" target="_blank" rel="noreferrer noopener">Internet.nl</a> </p>
+
+
+
+<p class="wp-block-paragraph"><strong>What it does</strong>:Checks websites and email servers for the use of standards—and standards matter for security. Internet.nl is an initiative of the Dutch Internet Standards Platform that helps you check whether your website, email, and internet connection use modern and reliable internet standards.</p>
+</div>
+
+
+
+<div class="wp-block-group has-custom-nocx-grey-background-color has-background is-vertical is-layout-flex wp-container-core-group-is-layout-10bed78a wp-block-group-is-layout-flex" style="border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
+<p class="wp-block-paragraph"><strong>Solution</strong>: <a href="https://ssl-config.mozilla.org/" target="_blank" rel="noreferrer noopener">SSL Configuration Generator</a> </p>
+
+
+
+<p class="wp-block-paragraph"><strong>What it does:</strong> Helps directly with the always-difficult task of creating a good SSL configuration for a server, database, etc. Make use of the knowledge of others. If you think a given configuration is not good, create a pull request so everyone benefits. The Mozilla SSL Configuration Generator builds configuration files to help you follow the Mozilla Server Side TLS configuration guidelines.</p>
+</div>
+
+
+
+<div class="wp-block-group has-custom-nocx-grey-background-color has-background is-vertical is-layout-flex wp-container-core-group-is-layout-10bed78a wp-block-group-is-layout-flex" style="border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
+<p class="wp-block-paragraph"><br><strong>Solution</strong> : <a href="https://tno.github.io/PQChoiceAssistant/" target="_blank" rel="noreferrer noopener">PQChoiceAssistant</a> </p>
+
+
+
+<p class="wp-block-paragraph"><strong>What is does</strong> : Given your input, you get direct solid advice for the best post-quantum cryptography algorithm for your use case. The results of the PQChoiceAssistant are a recommendation, but since it is open source, you can improve this tool with your knowledge.</p>
+</div>
+
+
+
+<div class="wp-block-group has-custom-nocx-grey-background-color has-background is-vertical is-layout-flex wp-container-core-group-is-layout-10bed78a wp-block-group-is-layout-flex" style="border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px;padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--30);padding-left:var(--wp--preset--spacing--30)">
+<p class="wp-block-paragraph"><strong>Solution</strong> : <a href="https://deps.dev/" target="_blank" rel="noreferrer noopener">Open Source Insights </a> </p>
+
+
+
+<p class="wp-block-paragraph"><strong>What is does:</strong> deps.dev is a service developed and hosted by Google to help developers better understand the structure, construction, and security of open source software packages. It is great and simple to use for inspection of a security risks of an application!</p>
+</div>
+
+
+
+<p class="wp-block-paragraph">And when you are done with these simple quick inspections, you can always look deeper and start <a href="https://nocomplexity.com/documents/securitysolutions/intro.html" target="_blank" rel="noreferrer noopener">running trusted local security test software</a>.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Security By Design: The Shortcut to Smarter, Safer Systems</title>
+		<link>https://nocomplexity.com/security-by-design-principles/</link>
+		
+		<dc:creator><![CDATA[Maikel Mardjan]]></dc:creator>
+		<pubDate>Wed, 06 May 2026 15:36:39 +0000</pubDate>
+				<category><![CDATA[Security]]></category>
+		<category><![CDATA[Security News]]></category>
+		<guid isPermaLink="false">https://nocomplexity.com/?p=4884</guid>
+
+					<description><![CDATA[No business is too small to attract cybercriminals. In fact, small and medium-sized businesses (SMBs) are often more appealing targets for ransomware than large, established enterprises. Limited resources, combined with access to valuable customer data, make them particularly vulnerable. One of the most persistent blind spots is the assumption that security is somehow built in [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p class="has-drop-cap wp-block-paragraph">No business is too small to attract cybercriminals. In fact, small and medium-sized businesses (SMBs) are often more appealing targets for ransomware than large, established enterprises. Limited resources, combined with access to valuable customer data, make them particularly vulnerable.</p>
+
+
+
+<span id="more-4884"></span>
+
+
+
+<p class="wp-block-paragraph">One of the most persistent blind spots is the assumption that security is somehow <em>built in </em>simply because modern tools or cloud platforms are in use. Many organisations believe that adopting platforms like Microsoft 365, Google Workspace, or Amazon Web Services (AWS) automatically ensures a strong security posture. <strong>It does not. </strong></p>
+
+
+
+<p class="wp-block-paragraph">The majority of breaches stem not from advanced hacking, but from <strong>weak security architecture, poor design decisions, and misconfigurations</strong>.</p>
+
+
+
+<p class="wp-block-paragraph">Attempting to bolt on security after the fact—especially to defend against both sophisticated threats and everyday mistakes—is not only difficult, but costly and often ineffective. The most reliable and proven approach is to embed security from the outset: <strong>Security by Design</strong>.</p>
+
+
+
+<p class="wp-block-paragraph">When practising Security by Design, you should, at a minimum, apply the following principles consistently across your architecture, design, and implementation activities:</p>
+
+
+
+<figure class="wp-block-table"><table class="has-fixed-layout"><tbody><tr><td><strong>Principle</strong></td><td><strong>Summary</strong></td><td><strong>Key Rule</strong></td></tr><tr><td><strong>Minimise attack surface area</strong></td><td>Remove unnecessary features, endpoints, entry points.</td><td>Less code → fewer holes.</td></tr><tr><td><strong>Establish secure defaults</strong></td><td>Default configs must be secure out-of-the-box.</td><td>Deny by default.</td></tr><tr><td><strong>Least privilege</strong></td><td>Every component/user gets minimum privileges to function.</td><td>Keep once, not twice.</td></tr><tr><td><strong>Separation of duties</strong></td><td>No single actor has excessive authority.</td><td>Split critical functions across multiple actors.</td></tr><tr><td><strong>Defence in depth</strong></td><td>Layer independent security controls.</td><td>One failure ≠ system compromise.</td></tr><tr><td><strong>Fail securely</strong></td><td>On failure, default to closed (deny) state.</td><td>Never fail open.</td></tr><tr><td><strong>Complete mediation</strong></td><td>Every access request must be checked.</td><td>No cached decisions.</td></tr><tr><td><strong>Economy of mechanism</strong></td><td>Keep security-critical designs simple and small.</td><td>Simplicity &gt; complexity.</td></tr><tr><td><strong>Open design</strong></td><td>No security by obscurity.</td><td>Assume attackers have your docs/code.</td></tr><tr><td><strong>Zero Trust</strong></td><td>Never implicitly trust internal/external services.</td><td>Verify everything.</td></tr><tr><td><strong>Compartmentalisation</strong></td><td>Isolate components.</td><td>Breach in one ≠ breach of all.</td></tr><tr><td><strong>Protect data everywhere</strong></td><td>Encrypt data at rest, in transit, and in-use.</td><td>Even during processing.</td></tr><tr><td><strong>Design for secure updates</strong></td><td>Systems must safely apply patches.</td><td>Update ability is a security feature.</td></tr></tbody></table></figure>
+
+
+
+<p class="wp-block-paragraph"></p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-35f06ea7 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link has-text-align-center wp-element-button" href="http://securitybydesign.nocomplexity.com" style="border-top-left-radius:40px;border-top-right-radius:40px;border-bottom-left-radius:40px;border-bottom-right-radius:40px" target="_blank" rel="noreferrer noopener"><strong>Want to create systems that are Secure by Design?</strong> <br>Explore the (free) Mastering Security By Design Guide.</a></div>
+</div>
+
+
+
+<p class="wp-block-paragraph"></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Simplifying Python Security: A Local-First Approach with WASM</title>
+		<link>https://nocomplexity.com/local-first-approach-with-wasm/</link>
+		
+		<dc:creator><![CDATA[Maikel Mardjan]]></dc:creator>
+		<pubDate>Fri, 10 Apr 2026 10:45:06 +0000</pubDate>
+				<category><![CDATA[Security]]></category>
+		<category><![CDATA[Security News]]></category>
+		<category><![CDATA[Python]]></category>
+		<guid isPermaLink="false">https://nocomplexity.com/?p=4879</guid>
+
+					<description><![CDATA[Python code plays a central role in modern computing, yet Python applications are not immune to cybersecurity threats. Consequently, security has become a critical concern for both users and developers alike. I advocate for simplifying cybersecurity. However, thinking, writing and talking are not enough. I prefer to get my hands dirty and experiment with many [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p class="has-drop-cap wp-block-paragraph">Python code plays a central role in modern computing, yet Python applications are not immune to cybersecurity threats. Consequently, security has become a critical concern for both users and developers alike.</p>
+
+
+
+<span id="more-4879"></span>
+
+
+
+<p class="wp-block-paragraph">I advocate for <a href="https://nocomplexity.com/simplify-security/" data-type="page" data-id="4450">simplifying cybersecurity</a>. However, thinking, writing and talking are not enough. I prefer to get my hands dirty and experiment with many different approaches to figure out how, in practice, simplifying cybersecurity can be accomplished.</p>
+
+
+
+<p class="wp-block-paragraph">This led me to develop a FOSS SAST (<a href="https://securitytesting.nocomplexity.com/" target="_blank" rel="noreferrer noopener">Static Application Security Testing</a>) tool for Python code and applications. To my surprise, the availability of high-quality, open-source SAST tools for Python is very limited. The open-source tools that do exist are often far from simple to use, especially if you just want to run a quick scan on a package when you have only ten seconds to decide whether to use it.</p>
+
+
+
+<p class="wp-block-paragraph">I believe that performing a SAST scan on a Python package should take no more than a few seconds. It should provide immediate, valuable insights before you decide to use a module or incorporate it into your own project.</p>
+
+
+
+<p class="wp-block-paragraph">After building a straightforward local CLI for <a href="https://github.com/nocomplexity/codeaudit" target="_blank" rel="noreferrer noopener">Python Code Audit</a>, I have made it possible for anyone to run a SAST scan with one single command:</p>
+
+
+
+<pre class="wp-block-code"><code>codeaudit filescan &lt;package-name|directory|file> &#91;reportname.html]</code></pre>
+
+
+
+<p class="wp-block-paragraph">But I wanted to make it even simpler. What if you could use this powerful SAST scanner directly from any browser, without installing software first?</p>
+
+
+
+<p class="wp-block-paragraph">I advocate for better and simpler security. This means:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Privacy First</strong>: Local analysis where no data ever leaves your machine.</li>
+
+
+
+<li><strong><a href="https://nocomplexity.com/ai_use_for_security/" data-type="post" data-id="4865">Avoiding AI agents for cybersecurity</a></strong>: SaaS-only solutions, where you have no control over the execution environment or the handling of your source code, should be avoided. Besides, most AI tools for Python security testing are far from good enough. Valuable source code should never be transferred to a SaaS solution that is out of your control; good security means no &#8220;security by obscurity&#8221;.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">So, how do you create a local-first, 100% web-based SAST scanner for Python that everyone can use without installing anything? A solid way to do this without abandoning FOSS principles is to use WebAssembly (WASM).&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">WASM is revolutionising how local-first Python applications can be distributed, requiring nothing more than a browser. Running code in this way leverages the robust security measures developed over the last 25 years to protect web users; the code executes within your browser&#8217;s highly isolated sandbox environment.&nbsp;</p>
+
+
+
+<p class="wp-block-paragraph">Don&#8217;t take Python security for modules on <a href="http://pypi.org">PyPI.org</a> for granted. Use this free web-based tool to check your Python modules for weaknesses before you integrate them.</p>
+
+
+
+<p class="wp-block-paragraph">You can try it out here:<a href="https://nocomplexity.com/codeauditapp/dashboardapp.html" target="_blank" rel="noreferrer noopener">Launch the Python Code Audit Web Scanner</a></p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-35f06ea7 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://nocomplexity.com/codeauditapp/dashboardapp.html" style="border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px" target="_blank" rel="noreferrer noopener">Launch the Python Code Audit Web Scanner</a></div>
+</div>
+
+
+
+<p class="wp-block-paragraph"></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Open Security News  &#8211; March 2026</title>
+		<link>https://nocomplexity.com/open-security-03-2026/</link>
+		
+		<dc:creator><![CDATA[Maikel Mardjan]]></dc:creator>
+		<pubDate>Tue, 24 Mar 2026 15:27:38 +0000</pubDate>
+				<category><![CDATA[Security News]]></category>
+		<category><![CDATA[Security]]></category>
+		<category><![CDATA[Software]]></category>
+		<guid isPermaLink="false">https://nocomplexity.com/?p=4877</guid>
+
+					<description><![CDATA[While security testing is crucial for protection, identifying security defects in Python-based software requires specialised knowledge. Most security testers lack the in-depth training on Python-specific nuances that is essential for performing effective security evaluations. In today’s digital world, cybersecurity remains a critical concern. This applies equally to the consumption and creation of Python software: preventing [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p class="has-drop-cap wp-block-paragraph">While security testing is crucial for protection, identifying security defects in Python-based software requires <strong><a href="https://securitytesting.nocomplexity.com/" target="_blank" rel="noreferrer noopener">specialised</a></strong> knowledge. Most security testers lack the in-depth training on Python-specific nuances that is essential for performing effective security evaluations.</p>
+
+
+
+<p class="wp-block-paragraph">In today’s digital world, cybersecurity remains a critical concern. This applies equally to the consumption and creation of Python software: preventing vulnerabilities begins with a robust architecture. However, even well-written code—including that generated by AI—is not secure by default. <strong><a href="https://nocomplexity.com/codeaudit/" data-type="page" data-id="4777">Python Code Audit</a></strong> is a vital, open-source (FOSS) tool that should be an integral part of your workflow.</p>
+
+
+
+<span id="more-4877"></span>
+
+
+
+<h2 class="wp-block-heading">1 Towards Modeling Cybersecurity Behavior of Humans in Organisations</h2>
+
+
+
+<p class="wp-block-paragraph">Humans are the defining factor in your security defence. You can spend vast sums on expensive security products, but ultimately, your users will find ways to bypass them. Under time pressure, most people become incredibly inventive at finding workarounds to move documents in or out of the system. Their goal isn&#8217;t to compromise security, but simply to do a good job and generate revenue for your company.</p>
+
+
+
+<p class="wp-block-paragraph">Do not blame your users; blame your architects. Ensure the human factor is thoroughly addressed through a robust <strong><a href="https://nocomplexity.gumroad.com/l/securitybydesign" target="_blank" rel="noreferrer noopener">security-by-design</a></strong> training programme. Training architects and developers to practise security-by-design consistently yields a higher return on investment than chasing the next &#8220;holy grail&#8221; cybersecurity product. This paper is designed for easy reading, supported by a clear, informative visual.</p>
+
+
+
+<p class="wp-block-paragraph">(<a href="https://arxiv.org/html/2603.08484v1" target="_blank" rel="noreferrer noopener">Link</a>)</p>
+
+
+
+<h2 class="wp-block-heading">2 OpenClaw is a Security Nightmare</h2>
+
+
+
+<p class="wp-block-paragraph">Everything you can imagine about OpenClaw is wrong. But it gets even worse. OpenClaw is a self-hosted AI agent that runs on your own machine and can execute real actions on your behalf: shell commands, file operations, and network requests. It is powerful, and the security blast radius effectively encompasses your entire system. OpenClaw is a <a href="https://blog.virustotal.com/2026/02/from-automation-to-infection-how.html" target="_blank" rel="noreferrer noopener">delivery channel for malware</a>.</p>
+
+
+
+<p class="wp-block-paragraph">(<a href="https://composio.dev/content/openclaw-security-and-vulnerabilities" target="_blank" rel="noreferrer noopener">Link</a>)</p>
+
+
+
+<h2 class="wp-block-heading">3 You should never use Cloudflare</h2>
+
+
+
+<p class="wp-block-paragraph">I am no fan of Cloudflare and especially distrust governmental agencies using this service. It should be forbidden for public service. It harms your security and kills the privacy of your users. It’s impossible to use Cloudflare proxy without giving up encryption of data. They are a man-in-the-middle that have access to unencrypted information of all the traffic they proxy.</p>
+
+
+
+<p class="wp-block-paragraph">(<a href="https://expatcircle.com/cms/why-you-should-never-use-cloudflare-it-causes-problems-is-bad-for-seo-and-a-spyware-tool/" target="_blank" rel="noreferrer noopener">Link</a>)</p>
+
+
+
+<h2 class="wp-block-heading">4 The Seven Sins of European Digital Identity (EUDI)</h2>
+
+
+
+<p class="wp-block-paragraph">Besides privacy concerns, the security model of the EUDI wallet component relies on the Trusted Execution Environment (TEE) layer provided by mobile OS manufacturers. This approach abandons the use of advanced cryptography in favour of compatibility with an API controlled by an oligopoly of foreign companies. All major players in the identity industry have long been aware of exploited vulnerabilities in mobile TEEs and—for very good reasons—do not rely on them. Nevertheless, current implementation plans for the EUDI appear to be heading towards a security nightmare, as all solid advice is being neglected.</p>
+
+
+
+<p class="wp-block-paragraph">(<a href="https://news.dyne.org/the-problems-of-european-digital-identity/" target="_blank" rel="noreferrer noopener">Link</a>)</p>
+
+
+
+<h2 class="wp-block-heading">5 TLS ECH (Encrypted Client Hello)</h2>
+
+
+
+<p class="wp-block-paragraph">Good security requires continuous learning. So better make it fun. This blog is a nice way to get (again) familiar with the <a href="https://www.rfc-editor.org/rfc/rfc9849.html" target="_blank" rel="noreferrer noopener">TLS ECH RFC9849</a> in an easy way.</p>
+
+
+
+<p class="wp-block-paragraph">(<a href="https://growingswe.com/blog/tls-ech">Link</a>)</p>
+
+
+
+<h2 class="wp-block-heading">6 Google is tracking you (even when you use DuckDuckGo)</h2>
+
+
+
+<p class="wp-block-paragraph">Escaping Google&#8217;s tracking online is hard. </p>
+
+
+
+<p class="wp-block-paragraph">(<a href="https://www.simpleanalytics.com/blog/google-is-tracking-you-even-when-you-use-duck-duck-go" target="_blank" rel="noreferrer noopener">Link</a>)</p>
+
+
+
+<h2 class="wp-block-heading">7 Low-Level Software Security for Compiler Developers</h2>
+
+
+
+<p class="wp-block-paragraph">Great open access book! So freely available online without barriers, such as mandatory registration. With software security becoming even more important in recent years, it is no surprise to see an ever increasing variety of security hardening features and mitigations against vulnerabilities implemented in compilers. This book aims to help developers of code generation tools such as JITs, compilers, linkers and assemblers to overcome this.</p>
+
+
+
+<p class="wp-block-paragraph">(<a href="https://nocomplexity.com/documents/securityarchitecture/securitylibrary/low-levelsoftwaresecurityforcompilerdevelopers.html" target="_blank" rel="noreferrer noopener">Link</a>)</p>
+
+
+
+<h2 class="wp-block-heading">8 Data Exfiltration Detection in Python Code</h2>
+
+
+
+<p class="wp-block-paragraph">In the modern digital economy, data is an organisation’s most valuable asset. When sensitive information falls into unauthorised hands, the consequences are often irreversible. Data egress occurs when information travels from your secure internal perimeter to an external destination. In a Python context, this includes the public internet, third-party cloud environments, partner networks, or SaaS integrations. You can now use <a href="https://github.com/nocomplexity/codeaudit">Python Code Audit</a> to check for <a href="https://nocomplexity.com/documents/codeaudit/data_exfiltration_detection.html#how-to-check-for-data-exfiltration">Data Exfiltration</a> constructs in Python code.</p>
+
+
+
+<p class="wp-block-paragraph">(<a href="https://nocomplexity.com/documents/codeaudit/data_exfiltration_detection.html#data-exfiltration-detection">Link</a>)</p>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-35f06ea7 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://nocomplexity.com/codeaudit/" style="border-radius:10px">Try Python Code Audit<br>A modern Python source code analyzer based on distrust.</a></div>
+</div>
+
+
+
+<p class="has-background has-small-font-size wp-block-paragraph" style="background-color:#d3d7db">The Open Security newsletter is an overview of cyber security news with a core focus on openness. Pointing out what went wrong after a cyber security breach is easy. Designing good and simple measurements is hard. So join the open <a href="https://nocomplexity.com/documents/securityarchitecture/introduction.html">Security Reference Architecture</a> collaboration project to create better solutions together. Or <a href="https://nocomplexity.com/ads-and-sponsoring/">become a partner</a> to support this project. Use our <a rel="noreferrer noopener" href="https://nocomplexity.com/rss2" target="_blank">RSS</a> or <a rel="noreferrer noopener" href="https://nocomplexity.com/atom" target="_blank">ATOM</a> feed to follow Open Security News.</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Static Application Security Testing (SAST): Simplicity Matters</title>
+		<link>https://nocomplexity.com/sast-simplicity-matters/</link>
+		
+		<dc:creator><![CDATA[Maikel Mardjan]]></dc:creator>
+		<pubDate>Fri, 13 Mar 2026 15:52:06 +0000</pubDate>
+				<category><![CDATA[Security]]></category>
+		<category><![CDATA[Security News]]></category>
+		<category><![CDATA[Python]]></category>
+		<guid isPermaLink="false">https://nocomplexity.com/?p=4875</guid>
+
+					<description><![CDATA[I have worked on delivering large-scale IT systems for more than 25 years. I spent my early years as an engineer, and for the last 20 years, I have worked in various architecture roles, steering development and solving complex issues. But some things never change:Cybersecurity remains a difficult and complex field. It requires expertise across [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p class="has-drop-cap wp-block-paragraph">I have worked on delivering large-scale IT systems for more than 25 years. I spent my early years as an engineer, and for the last 20 years, I have worked in various architecture roles, steering development and solving complex issues. But some things never change:Cybersecurity remains a difficult and complex field. It requires expertise across many different areas, such as business and computer sciences. </p>
+
+
+
+<span id="more-4875"></span>
+
+
+
+<p class="wp-block-paragraph">Security risks are challenging to manage and control; despite the costs and resources invested, major disasters due to security breaches are always a possibility.</p>
+
+
+
+<p class="wp-block-paragraph">Python code plays a central role in modern computing. It is deeply integrated into the operations of millions of companies and supports a vast number of software systems and applications globally.</p>
+
+
+
+<p class="wp-block-paragraph">In today’s digital world, cybersecurity remains a critical concern. This applies equally to using or creating Python software: preventing vulnerabilities starts with a solid architecture, but even well-written code, including AI-generated code, is not secure by default.</p>
+
+
+
+<p class="wp-block-paragraph">Validating Python code for potential vulnerabilities is therefore essential, whether you are writing your own programs or relying on code developed by others. A simple and highly effective way to gain quick insight into the security aspects of a Python program is to run a SAST scan (Static Application Security Testing) on the Python code before using it.</p>
+
+
+
+<p class="wp-block-paragraph">Evaluating the security aspects of software is expensive; it requires time and costly resources with specialist knowledge. In my opinion, a simple SAST scan tool for Python should be used by many more people who evaluate, try out, or use Python software.</p>
+
+
+
+<p class="wp-block-paragraph">Doing a SAST scan on a Python package should not take more than a few seconds and should provide immediate insights before one decides whether or not to use a certain software package.</p>
+
+
+
+<p class="wp-block-paragraph">However, the availability of high-quality, maintained FOSS SAST tools for Python is limited. Good security means no &#8220;security by obscurity&#8221;. My minimal requirements for any effective FOSS security tool are:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>FOSS-licensed:</strong> The product must be released under a valid Free and Open Source Software (FOSS) <strong>licence</strong>, ideally one approved by the Open Source Initiative (<a href="https://opensource.org/" target="_blank" rel="noreferrer noopener">OSI</a>).</li>
+
+
+
+<li><strong>Local-first deployment:</strong> The tool should run locally or on a server within your own security perimeter. SaaS-only solutions, where you have no control over the execution environment or the handling of your source code, should be avoided.</li>
+
+
+
+<li><strong>Actively maintained:</strong> The software must be actively maintained, with responsible vulnerability handling and visible issue management.</li>
+
+
+
+<li><strong>Public version control repository:</strong> The source code must be publicly available in a version-controlled repository, with <strong>a URL</strong> that can be accessed directly to view the code.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph">Naturally, I would like to see all FOSS security projects carry an <a href="https://www.bestpractices.dev/en">OpenSSF Best Practices</a> badge to showcase that all basic requirements for security projects are met. However, the popularity of this project among FOSS security tool developers remains low.</p>
+
+
+
+<p class="wp-block-paragraph">Most commercial SAST tools available for Python are bloated with functionality and, in practice, are not easy for occasional users to navigate. Python is a specialist programming language with several unique constructs.</p>
+
+
+
+<p class="wp-block-paragraph">SAST tools that claim to support a vast range of languages often suffer from significant limitations. The danger is that these shortcomings are hidden, providing a false sense of security. Because each language has its own unique <strong>Abstract Syntax Tree (AST)</strong> used to scan for vulnerabilities, an “all-in-one” solution rarely performs as well as a dedicated one; a “holy grail” tool simply does not exist.</p>
+
+
+
+<p class="wp-block-paragraph">Some commercial SAST scanners aim to appear open source but require you to create your own complex validation rules. These rules must be authored in YAML and often cannot be shared or published publicly for the benefit of the community. There are even paid courses dedicated solely to writing rules for these scanners. In these products, the basic rules for Python SAST scanning are often extremely limited, meaning the tool&#8217;s effectiveness depends entirely on your own ability to draft complex rules. I find this approach really insane and a criminal practice.</p>
+
+
+
+<p class="wp-block-paragraph">Why not abandon my &#8220;local-first&#8221; and FOSS principles for an easier AI-driven Python SAST scan? The truth is<a href="https://securitytesting.nocomplexity.com/module2/ai-testing/"> AI security tools for Python security testing</a> are just far from good enough. In the best case scenario, you’ll only be disappointed. But the risk of a false sense of security is enormous.<br></p>
+
+
+
+<p class="wp-block-paragraph">This is why I created a new, specific Python SAST scanner: a tool that can be relied upon and is simple to use. Too often, over-complicated security tools end up undermining security rather than improving it. The goal should be to do the fundamentals well—ensuring strong foundations rather than adding unnecessary complexity. The true power of my scanner, <strong><a href="https://github.com/nocomplexity/codeaudit" target="_blank" rel="noreferrer noopener">Python Code Audit</a></strong>, lies in its focused scope.<br></p>
+
+
+
+<p class="wp-block-paragraph">I encourage you to read more about the <strong><a href="https://nocomplexity.com/documents/codeaudit/project_philosophy.html" target="_blank" rel="noreferrer noopener">Project Philosophy</a></strong> and my <strong><a href="https://nocomplexity.com/documents/codeaudit/project_philosophy.html#design-approach-and-solution">Design Approach</a></strong>. More importantly, I invite you to try this new scanner on the various Python packages you evaluate and use.<br></p>
+
+
+
+<p class="wp-block-paragraph">You can install <strong>Python Code Audit</strong> via pip:</p>
+
+
+
+<pre class="wp-block-code"><code>pip install -U codeaudit</code></pre>
+
+
+
+<p class="wp-block-paragraph">And <strong>then</strong> perform a SAST scan by running the command:</p>
+
+
+
+<pre class="wp-block-code"><code>codeaudit filescan &lt;package-name|directory|file&gt; &#91;reportname.html]</code></pre>
+
+
+
+<p class="wp-block-paragraph">You can perform a SAST scan directly on a Python package available on <strong>PyPI.org</strong> without downloading it first. This tool is safe to use: no code is executed, as the Python code is <strong>analysed</strong> safely without being run.</p>
+
+
+
+<figure class="wp-block-image aligncenter size-full has-custom-border"><a href="https://nocomplexity.com/wp-content/uploads/2021/12/SimpelEinstein2.jpg"><img loading="lazy" decoding="async" width="330" height="247" src="https://nocomplexity.com/wp-content/uploads/2021/12/SimpelEinstein2.jpg" alt="simple!" class="wp-image-4552" style="border-top-left-radius:20px;border-top-right-radius:20px;border-bottom-left-radius:20px;border-bottom-right-radius:20px" srcset="https://nocomplexity.com/wp-content/uploads/2021/12/SimpelEinstein2.jpg 330w, https://nocomplexity.com/wp-content/uploads/2021/12/SimpelEinstein2-300x225.jpg 300w" sizes="auto, (max-width: 330px) 100vw, 330px" /></a></figure>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-35f06ea7 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://nocomplexity.com/codeaudit/" style="border-radius:10px">Try Python Code Audit<br>A modern Python source code analyzer based on distrust.</a></div>
+</div>
+
+
+
+<p class="wp-block-paragraph"></p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Detection of malware or security weaknesses?</title>
+		<link>https://nocomplexity.com/detection-of-malware/</link>
+		
+		<dc:creator><![CDATA[Maikel Mardjan]]></dc:creator>
+		<pubDate>Wed, 11 Mar 2026 13:03:08 +0000</pubDate>
+				<category><![CDATA[Security]]></category>
+		<category><![CDATA[Security News]]></category>
+		<category><![CDATA[Python]]></category>
+		<guid isPermaLink="false">https://nocomplexity.com/?p=4874</guid>
+
+					<description><![CDATA[Almost all software is under attack today, yet many organisations remain unprepared in their defence. Every day, news emerges of computer systems being breached, frequently through vulnerabilities within the software itself. Most security breaches do not use sophisticated new technology. The vast majority of security incidents are caused by: 1. Human Error: Mistakes by users, [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p class="has-drop-cap wp-block-paragraph">Almost all software is under attack today, yet many organisations remain unprepared in their defence. Every day, news emerges of computer systems being breached, frequently through vulnerabilities within the software itself.</p>
+
+
+
+<span id="more-4874"></span>
+
+
+
+<p class="wp-block-paragraph">Most security breaches do not use sophisticated new technology. The vast majority of security incidents are caused by:</p>
+
+
+
+<p class="wp-block-paragraph"><strong>1. Human Error:</strong> Mistakes by users, administrators, or developers that inadvertently expose data or systems.</p>
+
+
+
+<p class="wp-block-paragraph">Examples: misconfigure cloud storage, sending sensitive data to the wrong recipient, clicking phishing links, weak password use.<br></p>
+
+
+
+<p class="wp-block-paragraph"><strong>2. Lack of Proper Security Controls:</strong> Insufficient technical safeguards or process enforcement.</p>
+
+
+
+<p class="wp-block-paragraph">Examples:&nbsp; missing multi-factor authentication, unpatched software, inadequate network segmentation, poorly configured firewalls,&nbsp; not using a good FOSS scanning tool for Python applications.<br></p>
+
+
+
+<p class="wp-block-paragraph"><strong>3. Inadequate Awareness or Training:</strong> Staff failing to recognise threats or understand security procedures.</p>
+
+
+
+<p class="wp-block-paragraph">Examples: Developers not educated for applying <a href="https://nocomplexity.gumroad.com/l/securitybydesign">security by design</a>, employees unaware of phishing techniques, IT staff misconfigure services.</p>
+
+
+
+<p class="wp-block-paragraph"><strong>The Complexity of Malware Detection</strong></p>
+
+
+
+<p class="wp-block-paragraph">Detecting advanced malware is complex and difficult. Most &#8220;good&#8221; malware is:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Unknown:</strong> It will not be found by only checking against known vulnerability databases.</li>
+
+
+
+<li><strong>Targeted:</strong> It often targets expensive, closed-source commercial software and SaaS solutions. There is a common misconception that high-cost software is inherently secure; however, this has <strong>proven to be false</strong>.</li>
+
+
+
+<li><strong>Opportunistic:</strong> It succeeds only when other solid, proven methods—such as creating regular backups and storing data offline—are absent.</li>
+</ul>
+
+
+
+<p class="wp-block-paragraph"></p>
+
+
+
+<p class="wp-block-paragraph"><strong>The Pareto Principle</strong> is key to preventing security incidents: the majority of events are still caused by <strong>simple, preventable issues.</strong> These include failing to follow <strong>&#8220;Defence in Depth&#8221;</strong> principles or neglecting to perform SAST scanning on third-party Python code. Applying the Pareto principle means focus on <a href="https://nocomplexity.com/simplifysecurity-manifesto/" data-type="post" data-id="4635">simplifying cyber security</a>. Do things that have proven to work. <a href="https://securitytesting.nocomplexity.com/module2/ai-testing/">Using AI for security testing </a>and especially Python security testing is just far from good enough. In the best case scenario, you’ll only be disappointed. But the risk of a <strong>false sense of security</strong> is enormous.</p>
+
+
+
+<p class="wp-block-paragraph"><br>Doing a SAST scan is simple with Python Code Audit and highly effective:</p>
+
+
+
+<pre class="wp-block-code"><code>codeaudit filescanscan &lt;package-name|directory|file&gt; &#91;reportname.html]</code></pre>
+
+
+
+<p class="wp-block-paragraph">Before running the <em>codeaudit</em> command a prerequisite is that you have <a href="https://nocomplexity.com/codeaudit/">Python Code Audit</a> installed. This can be done with a single command:</p>
+
+
+
+<pre class="wp-block-code"><code>pip install -U codeaudit</code></pre>
+
+
+
+<p class="wp-block-paragraph"></p>
+
+
+
+<figure class="wp-block-image aligncenter size-large"><img decoding="async" src="https://securitytesting.nocomplexity.com/build/pareto-c7d0409220eb7cfbb77e04a1dc9ac0b3.png" alt=""/></figure>
+
+
+
+<div class="wp-block-buttons is-content-justification-center is-layout-flex wp-container-core-buttons-is-layout-35f06ea7 wp-block-buttons-is-layout-flex">
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://nocomplexity.com/codeaudit/" style="border-radius:10px">Try Python Code Audit<br>A modern Python source code analyzer based on distrust.</a></div>
+</div>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

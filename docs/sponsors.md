@@ -1,0 +1,86 @@
+# Sponsors 
+
+
+:::{admonition} Sponsor this project with a donation
+:class: tip
+This module is used within the FOSS security product: [Python Code Audit](https://nocomplexity.com/codeaudit/).
+
+If you want to support this Python security module, please consider supporting Python Code Audit: A Modern Python security analysis rooted in distrust. 
+
+```{button-link} https://buy.stripe.com/5kQ6oH3dm4RO1ujaOUgbm02
+:color: danger
+Make A Donation
+```
+:::
+
+Beyond making a one-off donation, there are opportunities to become a sponsor for this project. Our sponsorship options include:
+* Your logo and some text about your company in this manual.
+* Your advertisement for a cybersecurity vacancy in our frequently published [Open Security News Overview](https://nocomplexity.com/open-security-news/).
+* Your logo in one or more [NO|Complexity Playbooks](about). 
+
+
+:::{note} 
+**Note: We only display ethical ads as static images. So no ad networks or tracking technologies are used.**
+:::
+
+
+Our Playbooks and manuals are, and always will be, free, without tracking or other breaches of your privacy.
+
+
+All content of our Playbooks can be used for free since it is licensed under a [Creative Commons license](https://creativecommons.org/licenses/by-sa/4.0/). So you are free to use, reuse and improve our Playbooks with attribution.
+
+To make the development sustainable, we need users and companies, to support the development by providing their time and money.
+
+Our content is free to read, our tools are FOSS (GPL licenced). We rely on companies who see the value of [openness](https://www.bm-support.org/open-company-principles/) to create a better world. You can support us via a voluntary monthly subscription.
+
+
+## Become a sponsor
+
+As a free and open source project, you can sponsor our work to increase the audience for your commercial offerings.
+We’ve got an audience of thousands of adopters that read and use our online Playbooks.
+
+
+Please contact us by [using this page](https://nocomplexity.com/ads-and-sponsoring/) to discuss various options.
+
+## Premium Sponsors
+For help with Python security issues, check if one of our sponsors can assist you.
+
+
+::::{grid} 2
+:class-container: text-center
+:gutter: 3
+
+
+:::{grid-item-card} 
+:link: https://nocomplexity.com/
+:link-type: url
+![NO|COMPLEXITY](images/nocxbanner.png)
+
+**Complexity is easy, but simplicity is truly valuable**
+:::
+
+:::{grid-item-card} 
+:link: https://www.bm-support.org/
+:link-type: url
+![ROI Logo](images/ROI_logo.png)
+<br>
+
+**Openness by default to solve the most challenging problems!**
+:::
+
+
+:::{grid-item-card} 
+:link: https://organisatieontwerp.nl/
+:link-type: url
+![OO Logo](images/OO.png)
+
+**Diagnosis, Design and Change**
+:::
+
+:::{grid-item-card} 
+:link: https://nocomplexity.com/ads-and-sponsoring/
+![Your Logo](images/YourLogoHere.png)
+:::
+
+::::
+
