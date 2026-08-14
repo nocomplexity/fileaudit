@@ -147,6 +147,6 @@ package-lock.json
 #Python items for local testing / config
 .coverage
 .vscode
-src/fileaudit/.ipynb_checkpoints/
+
 
 	
