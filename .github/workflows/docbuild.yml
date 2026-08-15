@@ -6,8 +6,6 @@ on:
       - "docs/**"
       - "**/*.py"
       - "pyproject.toml"
-      - "setup.py"
-      - "setup.cfg"
   workflow_dispatch:
 
 permissions:
@@ -24,7 +22,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
           cache: pip
 
       - name: Install package and Jupyter Book
@@ -35,7 +33,12 @@ jobs:
 
       - name: Build Jupyter Book
         run: |
-          jupyter-book build /docs
+          jupyter-book build ./docs
+
+      - name: Check generated documentation
+        run: |
+          echo "Generated files:"
+          find docs/_build/html -maxdepth 2 -type f | sort
 
       - name: Upload documentation
         uses: actions/upload-pages-artifact@v3
