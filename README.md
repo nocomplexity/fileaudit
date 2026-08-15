@@ -38,22 +38,6 @@ pip install fileaudit
 ```
 
 
-## Safety Checks
-
-- **File size limit** – Prevents oversized files from being processed
-- **GZip decompression ratio** – Guards against decompression bombs
-- **Tar member count** – Limits the number of entries inside tar archives
-- **Total extracted size** – Caps the overall size of extracted content
-- **Individual file size** – Enforces a maximum size per extracted file
-- **Path traversal protection** – Blocks `../` and absolute path tricks
-- **Reject symlinks** – Disallows symbolic links
-- **Reject hardlinks** – Disallows hard links
-- **Reject device files** – Blocks device nodes
-- **Reject FIFOs** – Blocks named pipes
-- **Filename length** – Enforces a maximum filename length
-- **Directory depth** – Limits how deeply nested directories can be
-
-These checks can be used via a simple API or by adding a decorator — without changing your existing code.
 
 ## Installation
 
