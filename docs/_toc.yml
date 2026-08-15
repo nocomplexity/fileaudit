@@ -15,7 +15,9 @@ parts:
 
 - caption: User Guide  
   chapters:
-  - file: general_use 
+  - file: general_use
+    sections:
+    - file: notebooks/validate_csv_examples
    
 
 # - caption: Architecture 

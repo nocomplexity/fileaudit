@@ -5,7 +5,11 @@
 [NO|Complexity.com](https://nocomplexity.com/) is dedicated to solve business IT challenges in a rapidly evolving world. I’m Maikel Mardjan, and I believe that many business IT solutions are overly complex. Simple solutions have many advantages. But creating simple solutions is not simple. Tackling complexity challenges requires an unique combination of expertise, skills and people. 
 
 
-With experience across a range of architecture roles—including IT Architect, Security Architect, Business Architect, and Enterprise Architect—I have worked with various organizations to design IT systems that prioritize simplicity. I hold a Master’s degree (MSc) in Business Studies from the University of Groningen and a Master’s degree (MSc) in Electrical Engineering from Delft University of Technology. Additionally, I am TOGAF 9 Certified and hold CISSP (Certified Information Systems Security Professional) certification.
+With over 30 years of IT industry experience, I specialise in designing innovative systems and defending against complex cyber threats. Working as an independent architect across small businesses, large enterprises, and the public sector, I focus on delivering robust solutions to solve intricate challenges in demanding environments.
+
+I hold MSc degrees in Business Studies (University of Groningen) and Electrical Engineering (Delft University of Technology), and am both TOGAF and CISSP certified. 
+
+A FreeBSD user since version 4 for its simplicity and rock-solid security, I still love to do hands-on programming (C/C++, Java, Python, PHP,JS,GO etc) to learn, make and break things.
 
 Currently, I lead initiatives at NoComplexity.com, an innovative IT company focused on straightforward solutions. For more insights and updates, you can find me on X (despite my privacy and other concerns with BigTech...) at [@maikelmardjan](https://X.com/maikelmardjan).
 
