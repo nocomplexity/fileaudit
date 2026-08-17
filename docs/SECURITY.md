@@ -1,4 +1,4 @@
-# Security and Reporting Security Issues
+# Reporting Security Issues
 
 The security of this Python File Audit module is top priority!
 

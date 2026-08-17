@@ -1,7 +1,7 @@
 """
 License GPL3
 (C) 2026 Created by Maikel Mardjan - https://nocomplexity.com/
-FileAudit - File Security Checker
+FileAudit - JSON File Security Checker
 """
 import json
 import inspect

@@ -3,8 +3,7 @@ root: intro
 
 parts:
 - caption: Getting Started
-  chapters:    
-  - file: features
+  chapters:      
   - file: installation  
   - url: https://securitytesting.nocomplexity.com/ 
     title: Security Testing for Python
@@ -16,17 +15,19 @@ parts:
 - caption: User Guide  
   chapters:
   - file: general_use
+  - file: json_validations
+  - file: targz_validations
+  - file: tar_validations
+  - file: gz_validations
+  - file: zip_validations
+  - file: xml_validations
+  - file: csv_validations
+  - file: python_validations
+  - file: examples
     sections:
     - file: notebooks/validate_csv_examples
    
 
-# - caption: Architecture 
-#   chapters:       
-#   - file: architecture
-#   - file: makeitbetter
-#   - file: project_philosophy  
-#   - file: codeauditcommands  
-#   - file: changelog
   
   
 - caption: API Documentation
@@ -41,9 +42,16 @@ parts:
 #     - file: examples/ca_api_example_json
 #     - file: examples/ca_api_example_basic
   - file: reference/modules
-  - file: changelog
-  
-   
+
+
+- caption: Architecture 
+  chapters:
+    - file: SECURITY
+    - file: changelog
+#   - file: architecture
+#   - file: project_philosophy  
+
+
 
 - caption: About
   chapters:  
