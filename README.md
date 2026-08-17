@@ -2,7 +2,7 @@
 
 
 [![PythonCodeAudit Badge](https://img.shields.io/badge/Python%20Code%20Audit-Security%20Verified-FF0000?style=flat-square)](https://github.com/nocomplexity/codeaudit)
-[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/10970/badge)](https://www.bestpractices.dev/projects/10970) 
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/14110/badge)](https://www.bestpractices.dev/projects/14110)
 [![PyPI - Version](https://img.shields.io/pypi/v/fileaudit.svg)](https://pypi.org/project/fileaudit)
 [![Documentation](https://img.shields.io/badge/Python%20File%20Audit%20Manual-Available-blue)](https://nocomplexity.github.io/fileaudit/)
 [![License](https://img.shields.io/badge/License-GPLv3-FFD700)](https://github.com/nocomplexity/fileaudit/docs/license.md)
