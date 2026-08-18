@@ -2,7 +2,15 @@ name: File Audit Validation Tests
 
 on:
   push:
+    paths:
+      - "src/fileaudit/**"
+      - "tests/**"
+      - "pyproject.toml"
   pull_request:
+    paths:
+      - "src/fileaudit/**"
+      - "tests/**"
+      - "pyproject.toml"
 
 jobs:
   test:
