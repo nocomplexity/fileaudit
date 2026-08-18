@@ -49,28 +49,35 @@ class HTTPSOnlyRedirectHandler(urllib.request.HTTPRedirectHandler):
 # Opener that enforces HTTPS on redirects
 _https_opener = urllib.request.build_opener(HTTPSOnlyRedirectHandler)
 
-
-def _validate_url_scheme(path_str: str) -> bool:
+def _validate_url_scheme(path_str):
     """
-    Validate that a URL uses HTTPS only.
-    
-    Returns True if the path is a remote URL, False if it's a local path.
-    Raises FileValidationError for any non-HTTPS URL.
+    Validate that a path is either a local path or an HTTPS URL.
+
+    Returns True for a valid HTTPS URL and False for a local path.
+    Raises FileValidationError for non-HTTPS or malformed URLs.
     """
     parsed = urlparse(path_str)
-    
+
     if parsed.scheme:
         if parsed.scheme.lower() != "https":
             raise FileValidationError(
-                f"Unsupported URL scheme '{parsed.scheme}': only 'https' is allowed."
+                f"Unsupported URL scheme '{parsed.scheme}': "
+                "only 'https' is allowed."
             )
+
+        if not parsed.netloc:
+            raise FileValidationError(
+                "Invalid HTTPS URL: hostname is required."
+            )
+
         return True
-    elif parsed.netloc:
-        # Protocol-relative URLs like //example.com/file.json
+
+    if parsed.netloc:
         raise FileValidationError(
-            "URL scheme must be explicitly 'https'. Protocol-relative URLs are not allowed."
+            "URL scheme must be explicitly 'https'. "
+            "Protocol-relative URLs are not allowed."
         )
-    
+
     return False
 
 

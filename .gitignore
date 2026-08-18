@@ -149,5 +149,6 @@ package-lock.json
 .vscode
 src/fileaudit/.ipynb_checkpoints/
 docs/.ipynb_checkpoints/
+docs/notebooks/.ipynb_checkpoints/
 
 	

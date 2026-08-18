@@ -32,16 +32,7 @@ parts:
   
   
 - caption: API Documentation
-  chapters:  
-  #- file: apidocs/api_intro
-#     sections:    
-#     - file: examples/ca_api_example_overview
-#     - file: examples/example_risk_heatmap
-#     - file: examples/example_weakness_perfile_view
-#     - file: examples/ca_api_example_checks
-#     - file: examples/ca_api_example_scanning
-#     - file: examples/ca_api_example_json
-#     - file: examples/ca_api_example_basic
+  chapters:    
   - file: reference/modules
 
 

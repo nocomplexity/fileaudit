@@ -551,25 +551,31 @@ class TestEdgeCasesAndSecurity:
         # This is more of a conceptual test - json.dumps would fail on circular refs
         pass
 
+
     def test_toctou_protection(self, valid_json_file):
-        """Should handle TOCTOU race conditions gracefully."""
-        # Simulate file being deleted between stat and open
-        original_stat = Path.stat
+        """Should handle a file disappearing between validation and reading."""
+        original_open = Path.open
+        deleted = False
 
-        def evil_stat(self):
-            if self == valid_json_file:
-                # Return valid stat first
-                result = original_stat(self)
-                # Then delete the file
+        def evil_open(self, *args, **kwargs):
+            nonlocal deleted
+
+            if self == valid_json_file and not deleted:
+                deleted = True
                 self.unlink()
-                return result
-            return original_stat(self)
 
-        with patch("pathlib.Path.stat", evil_stat):
+            return original_open(self, *args, **kwargs)
+
+        with patch.object(Path, "open", evil_open):
             with pytest.raises((FileValidationError, OSError)):
                 _validate_json_file(
-                    valid_json_file, DEFAULT_MAX_DEPTH, DEFAULT_MAX_FILE_SIZE
+                    valid_json_file,
+                    DEFAULT_MAX_DEPTH,
+                    DEFAULT_MAX_FILE_SIZE,
                 )
+
+
+   
 
     def test_bom_in_json(self, tmp_path):
         """Should reject JSON with UTF-8 BOM — Python's json module does not support BOM."""

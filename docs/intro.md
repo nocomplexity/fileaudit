@@ -14,6 +14,7 @@
 :alt: logo
 :width: 200px
 :align: center
+:target: https://codeaudit.nocomplexity.com
 ```
 
 ::::{grid} 2
