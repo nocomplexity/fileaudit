@@ -70,10 +70,7 @@ TYPE_MAP = {
 
 class FileAudit:
     """🔒 Python File Audit - Secure your Python Programs with one simple line!"""
-
-    def __init__(self):
-        self.version = __version__
-
+   
     def check(self, filepath, type=None):
         """
         Validate a file for security issues.
@@ -218,8 +215,8 @@ class FileAudit:
         print("  fileaudit <command> [options]\n")
         print("Commands:")
         print("  check <FILE|URL> [--type TYPE]  Run a security audit on a local file or HTTPS URL")
-        print("  version                        Print version and exit")
-        print("  help                           Show this help\n")
+        print("  [-v] [--version] or version     Print version and exit")
+        print("  help                            Show this help\n")
         print("Options for check:")
         print("  --type TYPE                    Force file type instead of auto-detection")
         print("Supported types (auto-detected from extension):")
@@ -239,6 +236,11 @@ def main():
         FileAudit().help()
         return
 
+    # Handle version flags
+    if sys.argv[1] in ('-v', '--version'):
+        FileAudit().version()
+        return
+    
     first_arg = sys.argv[1]
 
     # Check if it's a URL or an existing file path
