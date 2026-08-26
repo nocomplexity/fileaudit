@@ -9,7 +9,7 @@ description = 'Python file security validator.'
 readme = "README.md"
 dependencies = ["fire==0.7.1"]
 requires-python = ">=3.12"
-license = "GPL-3.0-or-later"
+license = "MPL-2.0"
 keywords = ["Security", "Audit", "Software Development", "appsec" , "SecurityByDesign"]
 authors = [
   { name = "Maikel Mardjan", email = "mike@bm-support.org" },

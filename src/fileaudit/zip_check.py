@@ -1,5 +1,5 @@
 """
-License GPL3
+License MPL-2.0
 (C) 2026 Created by Maikel Mardjan - https://nocomplexity.com/
 FileAudit - ZIP File Security Checker
 """

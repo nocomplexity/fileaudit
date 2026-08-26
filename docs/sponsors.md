@@ -31,7 +31,7 @@ All content of our Playbooks can be used for free since it is licensed under a [
 
 To make the development sustainable, we need users and companies, to support the development by providing their time and money.
 
-Our content is free to read, our tools are FOSS (GPL licenced). We rely on companies who see the value of [openness](https://www.bm-support.org/open-company-principles/) to create a better world. You can support us via a voluntary monthly subscription.
+Our content is free to read, our tools are FOSS (GPL or MPL-2.0 licenced). We rely on companies who see the value of [openness](https://www.bm-support.org/open-company-principles/) to create a better world. You can support us via a voluntary monthly subscription.
 
 
 ## Become a sponsor

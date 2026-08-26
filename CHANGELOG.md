@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 0.2.3
+
+### Changed
+- Relicensed the project from **GPLv3** to **Mozilla Public License version 2.0 (MPL-2.0)** with permission of all authors.
+- Updated GitHub Actions CI workflows.
+
+
 ## Version 0.2.2
 
 ### Added

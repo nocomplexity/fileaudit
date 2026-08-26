@@ -1,5 +1,5 @@
 # SPDX-FileCopyrightText: 2025-present Maikel Mardjan
-# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-License-Identifier: MPL-2.0
 """
 Test suite for FileAudit - TAR.GZ Security Checker
 """
