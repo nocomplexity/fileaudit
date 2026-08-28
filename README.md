@@ -7,10 +7,10 @@
 [![Documentation](https://img.shields.io/badge/Python%20File%20Audit%20Manual-Available-blue)](https://nocomplexity.github.io/fileaudit/)
 [![License](https://img.shields.io/badge/License-MPL--2.0-FFD700)](https://github.com/nocomplexity/fileaudit/blob/main/docs/license.md)
 
-File Audit – Simplify Python Secure Programming by adding one line!
+File Audit – Simplify Python Security by adding one line!
 **Build secure Python applications by default. Validate files before you use them.**
 
-Python File Audit protects you from using insecure files and file-based attacks with a comprehensive set of safety checks.
+A robust file-validation library designed to protect your Python applications and scripts against untrusted or malicious files. 
 
 
 ## Safety Checks

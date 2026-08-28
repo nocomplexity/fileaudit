@@ -79,7 +79,7 @@ The `validate_xml` function performs comprehensive security checks:
 | **GZip Support** | Handles compressed XML with size limits |
 | **UTF-8 Validation** | Rejects files with invalid UTF-8 encoding |
 | **Remote File Restriction** | Strictly restricts remote access to HTTPS only |
-| **Parser Hardening** | Uses `defusedxml`-style protections against known XML attacks |
+| **Parser Hardening** | Uses protection methods against known XML attacks |
 
 ## How the Checks Can Be Used
 
