@@ -8,6 +8,7 @@
 
 **Python File Audit**: Build secure Python applications by default. Validate files before you use them.
 
+A robust file-validation library designed to protect your Python applications and scripts against untrusted or malicious input. 
 
 ```{image} images/ca_logo.png
 :alt: logo

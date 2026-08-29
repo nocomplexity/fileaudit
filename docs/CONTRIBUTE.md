@@ -61,6 +61,61 @@ Making code contributions to **Python File Audit** should be fun and simple!
 
 :::
 
+
+## Setting Up a Local Development Environment
+
+Follow these steps to create a local development environment so you can contribute to **Python File Audit**.
+
+### 1. Create and activate a Conda environment
+
+```bash
+conda create --name fileaudit_dev python=3.14
+conda activate fileaudit_dev
+```
+
+### 2. Install required tools
+
+```bash
+pip install hatch
+pip install codeaudit
+pip install -U pytest
+```
+
+### 3. Clone the repository and install in editable mode
+
+Clone the repository from GitHub, then install the package in editable mode from the project root:
+
+```bash
+git clone https://github.com/nocomplexity/fileaudit.git
+cd fileaudit
+pip install -e .
+```
+
+### 4. Verify the installation
+
+Run the test suite to confirm everything is working:
+
+```bash
+pytest
+```
+
+All tests should pass.
+
+### 5. Build the documentation (optional)
+
+To build the documentation, install Jupyter Book **version 1** (the 100% Sphinx-compatible version):
+
+```bash
+pip install "jupyter-book<2"
+```
+
+You can then build the docs locally from the `docs/` directory using the standard Jupyter Book commands. 
+
+But mind the manual is automatically build using a gitbub action when files under `docs` are changed.
+
+
+
+
 (CoC-label)=
 ## Code of Conduct
 

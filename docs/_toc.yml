@@ -38,9 +38,12 @@ parts:
 
 - caption: Architecture 
   chapters:
+    - file: architecture/architecture_overview
+      sections:
+      - file: architecture/xml
     - file: SECURITY
     - file: changelog
-#   - file: architecture
+
 #   - file: project_philosophy  
 
 
