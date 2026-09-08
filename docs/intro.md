@@ -10,11 +10,11 @@
 
 A robust file-validation library designed to protect your Python applications and scripts against untrusted or malicious input. 
 
-```{image} images/ca_logo.png
+```{image} images/fileaudit_logo.png
 :alt: logo
 :width: 200px
 :align: center
-:target: https://codeaudit.nocomplexity.com
+:target: https://fileaudit.nocomplexity.com
 ```
 
 ::::{grid} 2

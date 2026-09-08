@@ -7,6 +7,8 @@
 [![Documentation](https://img.shields.io/badge/Python%20File%20Audit%20Manual-Available-blue)](https://nocomplexity.github.io/fileaudit/)
 [![License](https://img.shields.io/badge/License-MPL--2.0-FFD700)](https://github.com/nocomplexity/fileaudit/blob/main/docs/license.md)
 
+![fileaudit_logo](fileaudit.png)
+
 File Audit – Simplify Python Security by adding one line!
 **Build secure Python applications by default. Validate files before you use them.**
 
@@ -29,14 +31,6 @@ A robust file-validation library designed to protect your Python applications an
 - **Directory depth** – Limits how deeply nested directories can be
 
 These checks can be used via a simple API or by adding a decorator — without changing your existing code.
-
-## Installation
-
-```bash
-pip install fileaudit
-```
-
-
 
 ## Installation
 

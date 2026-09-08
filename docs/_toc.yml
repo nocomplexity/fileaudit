@@ -40,7 +40,7 @@ parts:
   chapters:
     - file: architecture/architecture_overview
       sections:
-      - file: architecture/xml
+      - file: architecture/xml      
     - file: SECURITY
     - file: changelog
 
