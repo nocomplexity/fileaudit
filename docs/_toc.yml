@@ -5,6 +5,7 @@ parts:
 - caption: Getting Started
   chapters:      
   - file: installation  
+  - file: general_use
   - url: https://securitytesting.nocomplexity.com/ 
     title: Security Testing for Python
   - url: http://securitybydesign.nocomplexity.com/
@@ -13,8 +14,7 @@ parts:
     title: Python Security Handbook
 
 - caption: User Guide  
-  chapters:
-  - file: general_use
+  chapters:  
   - file: json_validations
   - file: targz_validations
   - file: tar_validations

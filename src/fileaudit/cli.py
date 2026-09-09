@@ -210,24 +210,22 @@ class FileAudit:
     def help(self):
         """Show detailed help for using FileAudit tool"""
         print(fileaudit_ascii_art)
-        print("Python File Audit - Secure your programs with one simple command.")
-        print("Usage:")
+        print("fileaudit - Secure your Python programs with one line of code.")
+        print("USAGE:")
         print("  fileaudit <command> [options]\n")
         print("Commands:")
         print("  check <FILE|URL> [--type TYPE]  Run a security audit on a local file or HTTPS URL")
         print("  [-v] [--version] or version     Print version and exit")
         print("  help                            Show this help\n")
         print("Options for check:")
-        print("  --type TYPE                    Force file type instead of auto-detection")
+        print("  --type TYPE                    Force file type instead of using auto-detection mode")
         print("Supported types (auto-detected from extension):")
         for ftype, description in sorted(SUPPORTED_TYPES.items()):
             print(f"  {ftype:<12} {description}")
         print("\nExamples:")
-        print("  fileaudit check app.py")
-        print("  fileaudit check data.json")
-        print("  fileaudit check https://example.com/archive.zip")
+        print("  fileaudit check app.py | fileaudit check data.json | fileaudit check https://example.com/archive.zip")
         print("  fileaudit check unknown.dat --type json")
-        print("\nCheck the Documentation: https://fileaudit.nocomplexity.com")
+        print("\nCheck the Documentation on: https://fileaudit.nocomplexity.com")
 
 
 def main():

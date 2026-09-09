@@ -445,6 +445,7 @@ def validate_gz(
     - Symlink protection where supported (local)
     - Detection of file-size changes during validation (local)
     - Remote files restricted to ``https://`` only
+    
 
     Usage:
 
@@ -478,35 +479,30 @@ def validate_gz(
         func_or_path (callable, str, pathlib.Path, or None):
             Controls the operating mode:
 
-            * If a **callable**: the function to decorate
+            - If a **callable**: the function to decorate
             (bare decorator usage: ``@validate_gz``).
-
-            * If a **str** or **Path** representing a file path or HTTPS URL:
+            - If a **str** or **Path** representing a file path or HTTPS URL:
             direct validation mode.
-
-            * If a **str** that is a valid Python identifier and does not
+            - If a **str** that is a valid Python identifier and does not
             look like a file path: treated as the target argument name in decorator mode.
+            - If **None**: returns a decorator factory.
 
-            * If **None**: returns a decorator factory.
 
         max_file_size (int):
-
-            Maximum allowed compressed file size in bytes.
+        - Maximum allowed compressed file size in bytes.
 
         max_uncompressed_ratio (int):
-
-            Maximum GZip decompression ratio.
+        - Maximum GZip decompression ratio.
 
         max_uncompressed_size (int):
-
-            Maximum total uncompressed size in bytes.
+        - Maximum total uncompressed size in bytes.
 
     Returns:
 
         Union[callable, bool, function]:
 
-        * In decorator mode: the wrapped function.
-        * In direct call mode: ``True`` if validation passes, ``False`` if validation fails.
+        - In decorator mode: the wrapped function.
+        - In direct call mode: ``True`` if validation passes, ``False`` if validation fails.
 
     Raises:
 

@@ -25,6 +25,30 @@ Be cautious when parsing JSON data from untrusted sources or third parties. From
 - **Network timeouts** — remote requests use explicit timeouts (10 s for HEAD size check, 30 s for GET download) to avoid hanging on unresponsive servers
 - **Dual usage modes** — direct validation (returns `True`/`False`) or decorator that guards a function argument and raises `FileValidationError` on failure
 
+
+## Configuration Options
+
+The `validate_json` function accepts the following parameters to customize validation behaviour:
+
+
+### Parameters
+
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `max_depth` | `int` or `None` | `DEFAULT_MAX_DEPTH` | Limits recursive structural depth allowed when parsing the JSON document to prevent stack overflow issues or excessive processing times. |
+| `max_file_size` | `int` or `None` | `DEFAULT_MAX_FILE_SIZE` | Defines the maximum byte length allowed for the file on disk or remote HTTP resource before aborting parsing. |
+
+
+### Default Limits
+
+The function applies sensible defaults to prevent resource exhaustion:
+
+```python
+DEFAULT_MAX_DEPTH = 50          # Maximum nesting levels
+DEFAULT_MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+```
+
+
 ## How to Use
 
 **Direct validation** (returns `True`/`False`):
@@ -57,6 +81,19 @@ def process_json(config_path, other_arg):
     ...
 ```
 
+```python
+
+# Bare decorator (validates the first argument)
+@validate_json
+def load_data(file_path: str):
+    pass
+
+# Custom constraints applied via factory
+@validate_json(max_depth=50, max_file_size=5000)
+def parse_payload(path: Path):
+    pass
+
+```
 
 :::{note} 
 JSON Schema checks are **not covered**! This is application specific and not considered as a general security validation.

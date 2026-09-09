@@ -1,4 +1,4 @@
-# How to use this module
+# Basic Usage
 
 This Python module performs security audits on various types of files.
 
