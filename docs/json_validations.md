@@ -26,7 +26,7 @@ Be cautious when parsing JSON data from untrusted sources or third parties. From
 - **Dual usage modes** — direct validation (returns `True`/`False`) or decorator that guards a function argument and raises `FileValidationError` on failure
 
 
-## Configuration Options
+## Usage Options
 
 The `validate_json` function accepts the following parameters to customize validation behaviour:
 

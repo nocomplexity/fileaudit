@@ -26,6 +26,41 @@ The `validate_tar` function performs comprehensive security checks:
 | **Directory Depth** | Prevents excessive nesting that could exhaust inodes |
 | **Remote File Restriction** | Only accepts `https://` URIs (strictly no `http://`, `ftp://`, `file://`) |
 
+
+## Usage Options
+
+### Parameters
+
+| Parameter                  | Description                                      |
+|----------------------------|--------------------------------------------------|
+| `func_or_path`             | Path or callable for the tar archive.            |
+| `max_file_size`            | Max size of the archive file.                    |
+| `max_tar_members`          | Max number of members in the archive.            |
+| `max_total_extracted_size` | Max total size of extracted content.             |
+| `max_individual_file_size` | Max size of any single file.                     |
+| `max_filename_length`      | Max length of filenames.                         |
+| `max_directory_depth`      | Max directory nesting depth.                     |
+
+### Defaults
+
+
+Global default fallbacks:
+
+```bash
+DEFAULT_MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+DEFAULT_MAX_TAR_MEMBERS = 1000
+DEFAULT_MAX_TOTAL_EXTRACTED_SIZE = 100 * 1024 * 1024  # 100 MB
+DEFAULT_MAX_INDIVIDUAL_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+DEFAULT_MAX_FILENAME_LENGTH = 255
+DEFAULT_MAX_DIRECTORY_DEPTH = 50
+```
+
+And note:
+```
+HEAD_TIMEOUT = 10
+DOWNLOAD_TIMEOUT = 30
+```
+
 ## Usage Modes
 
 ### 1. Direct Call / CLI Validation

@@ -81,6 +81,43 @@ The `validate_xml` function performs comprehensive security checks:
 | **Remote File Restriction** | Strictly restricts remote access to HTTPS only |
 | **Parser Hardening** | Uses protection methods against known XML attacks |
 
+
+
+## Usage Options
+
+### Parameters
+
+| Parameter          | Description                          |
+|--------------------|--------------------------------------|
+| `func_or_path`     | Path or callable for the XML file.   |
+| `max_depth`        | Max nesting depth of elements.       |
+| `max_file_size`    | Max size of the XML file.            |
+| `max_attributes`   | Max number of attributes.            |
+| `max_elements`     | Max number of elements.              |
+| `max_text_length`  | Max length of text content.          |
+| `max_name_length`  | Max length of element/attribute names. |
+
+
+### Defaults
+
+
+Global default fallbacks:
+```bash
+DEFAULT_MAX_DEPTH = 50
+DEFAULT_MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+DEFAULT_MAX_ATTRIBUTES = 1000
+DEFAULT_MAX_ELEMENTS = 10_000
+DEFAULT_MAX_TEXT_LENGTH = 100000  # 100KB per text node
+DEFAULT_MAX_NAME_LENGTH = 100
+```
+
+And note:
+
+```
+HEAD_TIMEOUT = 10
+DOWNLOAD_TIMEOUT = 30
+```
+
 ## How the Checks Can Be Used
 
 The function operates in three modes:

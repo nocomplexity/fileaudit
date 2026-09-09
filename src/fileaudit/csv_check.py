@@ -14,9 +14,8 @@ from functools import wraps
 from pathlib import Path
 from urllib.parse import urlparse
 
-# ---------------------------------------------------------------------------
+
 # Defaults
-# ---------------------------------------------------------------------------
 
 DEFAULT_MAX_FILE_SIZE = 10 * 1024 * 1024       # 10 MB
 DEFAULT_MAX_ROWS = 100_000

@@ -33,6 +33,40 @@ The `validate_zip` function performs comprehensive security checks:
 | **Compression Validation** | Rejects unsupported compression methods |
 | **Remote File Restriction** | Strictly restricts remote access to HTTPS only |
 
+
+## Usage Options
+
+### Parameters
+
+| Parameter                  | Description                                      |
+|----------------------------|--------------------------------------------------|
+| `func_or_path`             | Path or callable for the zip archive.            |
+| `max_file_size`            | Max size of the archive file.                    |
+| `max_uncompressed_ratio`   | Max compression ratio.                           |
+| `max_zip_members`          | Max number of members in the archive.            |
+| `max_total_extracted_size` | Max total size of extracted content.             |
+| `max_individual_file_size` | Max size of any single file.                     |
+| `max_filename_length`      | Max length of filenames.                         |
+| `max_directory_depth`      | Max directory nesting depth.                     |
+
+### Defaults 
+
+```bash
+DEFAULT_MAX_FILE_SIZE = 100 * 1024 * 1024          # 100 MiB
+DEFAULT_MAX_UNCOMPRESSED_RATIO = 100               # 100:1
+DEFAULT_MAX_ZIP_MEMBERS = 10_000
+DEFAULT_MAX_TOTAL_EXTRACTED_SIZE = 1 * 1024 * 1024**3  # 1 GiB
+DEFAULT_MAX_INDIVIDUAL_FILE_SIZE = 100 * 1024 * 1024   # 100 MiB
+DEFAULT_MAX_FILENAME_LENGTH = 255
+DEFAULT_MAX_DIRECTORY_DEPTH = 20
+```
+
+And note:
+```
+HEAD_TIMEOUT = 10
+DOWNLOAD_TIMEOUT = 30
+```
+
 ## How the Checks Can Be Used
 
 The function operates in three modes:

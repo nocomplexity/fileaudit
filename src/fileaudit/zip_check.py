@@ -17,9 +17,9 @@ from pathlib import Path
 from urllib.parse import urlparse
 import unicodedata
 
-# ---------------------------------------------------------------------------
+
 # Defaults
-# ---------------------------------------------------------------------------
+
 DEFAULT_MAX_FILE_SIZE = 100 * 1024 * 1024          # 100 MiB
 DEFAULT_MAX_UNCOMPRESSED_RATIO = 100               # 100:1
 DEFAULT_MAX_ZIP_MEMBERS = 10_000

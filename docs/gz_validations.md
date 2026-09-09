@@ -27,7 +27,43 @@ The `validate_gz` function performs comprehensive security checks:
 | **TOCTOU Detection** | Detects file size changes during validation (local files) |
 | **Remote File Restriction** | Strictly restricts remote access to HTTPS only |
 
-## How the Checks Can Be Used
+## Usage Options
+
+### Parameters
+
+| Parameter                | Description                                      |
+|--------------------------|--------------------------------------------------|
+| `func_or_path`           | Path or callable for the gz file.                |
+| `max_file_size`          | Max size of the compressed file.                 |
+| `max_uncompressed_ratio` | Max compression ratio.                           |
+| `max_uncompressed_size`  | Max size after decompression.                    |
+
+### Defaults 
+
+
+Global default fallbacks
+
+```bash
+DEFAULT_MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+DEFAULT_MAX_UNCOMPRESSED_RATIO = 100  # 100:1 ratio
+DEFAULT_MAX_UNCOMPRESSED_SIZE = 100 * 1024 * 1024  # 100 MB
+```
+
+Decompressed file size into memory (chunks).
+
+```
+GZ_READ_CHUNK_SIZE = 1024 * 1024  # 1 MB
+```
+
+And note:
+```
+HEAD_TIMEOUT = 10
+DOWNLOAD_TIMEOUT = 30
+```
+
+## Examples 
+
+Some simple examples how the checks can be used:
 
 The function operates in three modes:
 

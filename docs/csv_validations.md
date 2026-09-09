@@ -22,6 +22,42 @@ Validating before processing mitigates these risks.
 - **Flexible input** — local paths, `pathlib.Path` objects, and URLs
 - **Dual usage modes** — direct validation (returns `True`/`False`) or decorator that guards a function argument and raises `CsvValidationError` on failure
 
+
+## Usage Options
+
+### Parameters
+
+| Parameter                  | Description                                      |
+|----------------------------|--------------------------------------------------|
+| `func_or_path`             | Path or callable for the CSV file.               |
+| `max_file_size`            | Max size of the CSV file.                        |
+| `max_rows`                 | Max number of rows.                              |
+| `max_columns`              | Max number of columns.                           |
+| `max_field_size`           | Max size of any single field.                    |
+| `max_total_fields`         | Max total number of fields.                      |
+| `max_row_size`             | Max size of any single row.                      |
+| `max_filename_length`      | Max length of the filename.                      |
+| `reject_formula_injection` | Reject cells that look like formulas.            |
+| `reject_control_characters`| Reject control characters in fields.             |
+| `encoding`                 | File encoding (default: utf-8).                  |
+| `dialect`                  | CSV dialect (default: excel).                    |
+
+
+### Defaults
+
+```bash
+DEFAULT_MAX_FILE_SIZE = 10 * 1024 * 1024       # 10 MB
+DEFAULT_MAX_ROWS = 100_000
+DEFAULT_MAX_COLUMNS = 1_000
+DEFAULT_MAX_FIELD_SIZE = 1 * 1024 * 1024       # 1 MB
+DEFAULT_MAX_TOTAL_FIELDS = 10_000_000
+DEFAULT_MAX_ROW_SIZE = 5 * 1024 * 1024         # 5 MB
+DEFAULT_MAX_FILENAME_LENGTH = 255
+DEFAULT_REMOTE_TIMEOUT = 30
+DEFAULT_READ_CHUNK_SIZE = 64 * 1024
+```
+
+
 ## How to Use
 
 **Direct validation** (returns `True`/`False`):

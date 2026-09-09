@@ -24,7 +24,35 @@ The validator also has the capabilities to reject or protect:
 - **Special Files Rejected**     
    The function also rejects symlinks/hardlinks/devices/FIFOs” in `tar.gz` files.
 
+## Usage Options
 
+### Parameters
+
+| Parameter                  | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| `path`             | path (local or remote) to the `.tar.gz` archive. |
+| `max_file_size`            | Maximum size (in bytes) of the compressed `.tar.gz` archive.  |
+| `max_uncompressed_ratio`   | Maximum compression ratio (uncompressed / compressed size). Protects against bombs.  |
+| `max_tar_members`          | Maximum number of members (files + directories) in the archive.  |
+| `max_total_extracted_size` | Maximum total size (in bytes) of all extracted content.  |
+| `max_individual_file_size` | Maximum size (in bytes) of any single file inside the archive.  |
+| `max_filename_length`      | Maximum length of any filename or path component.  |
+| `max_directory_depth`      | Maximum nesting depth of directories inside the archive.  |
+
+### Defaults
+
+
+Global default fallbacks:
+
+```bash
+DEFAULT_MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+DEFAULT_MAX_UNCOMPRESSED_RATIO = 100  # 100:1 ratio
+DEFAULT_MAX_TAR_MEMBERS = 1000
+DEFAULT_MAX_TOTAL_EXTRACTED_SIZE = 100 * 1024 * 1024  # 100 MB
+DEFAULT_MAX_INDIVIDUAL_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+DEFAULT_MAX_FILENAME_LENGTH = 255
+DEFAULT_MAX_DIRECTORY_DEPTH = 50
+```
 
 ## How to use the checks
 

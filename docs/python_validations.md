@@ -37,7 +37,53 @@ When the AST is subsequently compiled or walked by further analysis tools, node-
 * Extremely long lines or certain literal constructions can cause the parser to consume CPU for seconds or minutes.
 * A malicious file deliberately placed in a watched directory or upload folder remains a viable DoS vector.
 
-Consequently the `SIGALRM`-based timeout, the explicit catching of `MemoryError` / `RecursionError`, and the post-parse AST node-count limit are parser-hardening measures that stay relevant after remote-URL handling has been removed. They protect the process regardless of whether the file originated on the local filesystem or elsewhere.
+Consequently, the `SIGALRM`-based timeout, the explicit catching of `MemoryError` / `RecursionError`, and the post-parse AST node-count limit are parser-hardening measures that stay relevant after remote-URL handling has been removed. They protect the process regardless of whether the file originated on the local filesystem or elsewhere.
+
+
+
+## Usage Options
+
+### Parameters
+
+| Parameter           | Description                                      |
+|---------------------|--------------------------------------------------|
+| `func_or_path`      | Path or callable for the Python file.            |
+| `max_file_size`     | Max size of the Python file.                     |
+| `max_lines`         | Max number of lines.                             |
+| `max_line_length`   | Max length of any line.                          |
+| `max_ast_nodes`     | Max number of AST nodes.                         |
+| `allowed_base_dir`  | Restrict file to this base directory.            |
+| `allow_symlinks`    | Allow symbolic links.                            |
+| `parse_timeout`     | Timeout for parsing the file.                    |
+
+
+### Defaults
+
+```bash
+DEFAULT_MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+DEFAULT_MAX_LINES = 100_000
+DEFAULT_MAX_LINE_LENGTH = 10_000
+DEFAULT_MAX_AST_NODES = 500_000
+```
+
+:::{note}
+A Python file of 10MB is very very large, so these default are targetted on slopy AI produced Python files that you should inspect!
+If a `.py` file actually hits >1 MB, it is almost certainly machine-generated or being misused. So use [Python Code Audit](https://github.com/nocomplexity/codeaudit) for inspection!
+:::
+
+In software development, guardrails like `DEFAULT_MAX_FILE_SIZE = 10 * 1024 * 1024` are safety ceilings, not expected norms.
+
+If a code analyzer or linter had a 1 MB limit, it would crash on legitimate edge cases (like a auto-generated 2 MB gRPC file or a file with an embedded lookup table).
+
+:::{note}
+Normal Python files are under 500 KB, but we'll allow up to 10 MB for strange edge cases. Anything over 10 MB is definitely a mistake or a malicious attempt to crash our system (Denial of Service).
+
+:::
+
+And note for remote files:
+```
+DEFAULT_PARSE_TIMEOUT = 10  # seconds
+```
 
 
 ## How to use the checks
