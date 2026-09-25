@@ -7,7 +7,7 @@
 [![Documentation](https://img.shields.io/badge/Python%20File%20Audit%20Manual-Available-blue)](https://nocomplexity.github.io/fileaudit/)
 [![License](https://img.shields.io/badge/License-MPL--2.0-FFD700)](https://github.com/nocomplexity/fileaudit/blob/main/docs/license.md)
 
-![fileaudit_logo](fileaudit.png)
+[![fileaudit_logo](fileaudit.png)](https://fileaudit.nocomplexity.com/)
 
 File Audit – Simplify Python Security by adding one line!
 **Build secure Python applications by default. Validate files before you use them.**
