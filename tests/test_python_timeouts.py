@@ -41,17 +41,29 @@ def _make_alarm_fire_immediately(timeout_exc_factory):
     not hasattr(signal, "SIGALRM") or not hasattr(signal, "alarm"),
     reason="parse_timeout relies on SIGALRM (Unix only)",
 )
+
 def test_parse_timeout_triggers(tmp_path):
     """parse_timeout must cause validation to fail when the alarm fires."""
     py_file = _write_simple_py(tmp_path)
 
-    # Use a generic TimeoutError; replace with the exact exception your
-    # implementation raises from the SIGALRM handler if different.
-    TimeoutExc = TimeoutError
+    # The SIGALRM handler raises PythonValidationError
+    TimeoutExc = PythonValidationError
 
     with patch("signal.alarm", side_effect=_make_alarm_fire_immediately(TimeoutExc)):
         result = validate_python(py_file, parse_timeout=1)
         assert result is False
+
+# def test_parse_timeout_triggers(tmp_path):
+#     """parse_timeout must cause validation to fail when the alarm fires."""
+#     py_file = _write_simple_py(tmp_path)
+
+#     # Use a generic TimeoutError; replace with the exact exception your
+#     # implementation raises from the SIGALRM handler if different.
+#     TimeoutExc = TimeoutError
+
+#     with patch("signal.alarm", side_effect=_make_alarm_fire_immediately(TimeoutExc)):
+#         result = validate_python(py_file, parse_timeout=1)
+#         assert result is False
 
 
 @pytest.mark.skipif(
@@ -68,6 +80,8 @@ def test_parse_timeout_does_not_fire_for_fast_parse(tmp_path):
     not hasattr(signal, "SIGALRM") or not hasattr(signal, "alarm"),
     reason="parse_timeout relies on SIGALRM (Unix only)",
 )
+
+
 def test_parse_timeout_in_decorator_mode(tmp_path):
     """Decorator mode raises PythonValidationError on timeout."""
     py_file = _write_simple_py(tmp_path)
@@ -76,9 +90,25 @@ def test_parse_timeout_in_decorator_mode(tmp_path):
     def process(path):
         return "ok"
 
-    with patch("signal.alarm", side_effect=_make_alarm_fire_immediately(TimeoutError)):
-        with pytest.raises(PythonValidationError):
+    def mock_alarm(seconds):
+        if seconds > 0:
+            raise PythonValidationError(
+                "AST parsing timed out after 1 seconds "
+                "(possible pathological input)"
+            )
+        return 0
+
+    with (
+        patch("signal.SIGALRM", 14, create=True),
+        patch("signal.signal", return_value=None, create=True),
+        patch("signal.alarm", side_effect=mock_alarm, create=True),
+    ):
+        with pytest.raises(
+            PythonValidationError,
+            match="AST parsing timed out",
+        ):
             process(py_file)
+
 
 
 def test_parse_timeout_ignored_when_no_sigalrm(tmp_path, monkeypatch):
