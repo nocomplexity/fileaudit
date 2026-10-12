@@ -9,6 +9,7 @@ import inspect
 import signal
 from pathlib import Path
 from functools import wraps
+from contextlib import suppress
 
 # Global default fallbacks
 DEFAULT_MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
@@ -406,17 +407,11 @@ def _validate_python_file(
                     old_alarm = signal.alarm(parse_timeout)
                     alarm_started = True
                 except (AttributeError, NotImplementedError, OSError, ValueError):
-                    # Signal APIs can exist but still be unsupported in the current runtime/thread. Restore state and parse normally.
+                    # Signal APIs can exist but still be unsupported in the current runtime/thread.
+                    # Restore the previous handler if possible, then parse normally.
                     if handler_installed:
-                        try:
+                        with suppress(AttributeError, NotImplementedError, OSError, ValueError):
                             signal.signal(signal.SIGALRM, old_handler)
-                        except (
-                            AttributeError,
-                            NotImplementedError,
-                            OSError,
-                            ValueError,
-                        ):
-                            pass
                     tree = ast.parse(source, filename=str(local_path))
                 else:
                     try:
