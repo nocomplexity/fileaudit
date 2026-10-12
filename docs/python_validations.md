@@ -31,15 +31,6 @@ If you only parse Python source and never execute it, the primary residual risks
 When the AST is subsequently compiled or walked by further analysis tools, node-count limits and (where applicable) node whitelisting become critical additional safeguards.
 
 
-`parse_timeout` is not a network-oriented control. Even purely local `.py` files can hang or crash `ast.parse`:
-
-* Deeply nested expressions such as `((((...(((1))))...))))` can exhaust the C stack during parsing.
-* Extremely long lines or certain literal constructions can cause the parser to consume CPU for seconds or minutes.
-* A malicious file deliberately placed in a watched directory or upload folder remains a viable DoS vector.
-
-Consequently, the `SIGALRM`-based timeout, the explicit catching of `MemoryError` / `RecursionError`, and the post-parse AST node-count limit are parser-hardening measures that stay relevant after remote-URL handling has been removed. They protect the process regardless of whether the file originated on the local filesystem or elsewhere.
-
-
 
 ## Usage Options
 
@@ -57,9 +48,20 @@ Consequently, the `SIGALRM`-based timeout, the explicit catching of `MemoryError
 | `parse_timeout`     | Timeout for parsing the file.                    |
 
 
+:::{danger}
+`parse_timeout` is not a network-oriented control. Even purely local `.py` files can hang or crash the module `ast` when performing `ast.parse`. 
+`ast.parse` is a single blocking call into CPython's C parser/tokenizer. Once it's running, Python-level code cannot interrupt it. There is no "cancel" flag you can poll. So to prevent against `py` files that can create DDoS attacks this validation is needed.
+:::
+
+The `parse_timeout` option protects against:
+* Deeply nested expressions such as `((((...(((1))))...))))` can exhaust the C stack during parsing.
+* Extremely long lines or certain literal constructions can cause the parser to consume CPU for seconds or minutes.
+* A malicious file deliberately placed in a watched directory or upload folder remains a viable DoS vector.
+
+
 ### Defaults
 
-```bash
+```python
 DEFAULT_MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
 DEFAULT_MAX_LINES = 100_000
 DEFAULT_MAX_LINE_LENGTH = 10_000

@@ -48,11 +48,7 @@ def validate_python(
 ):
     """Validate Python source files via decorator or direct invocation.
 
-
-
     A Python file validator that can operate in two modes:
-
-
 
     1. **Decorator mode** — wraps a function to validate a Python file path
 
@@ -62,10 +58,7 @@ def validate_python(
 
        a boolean result.
 
-
-
     Security checks performed before (and during) AST parsing:
-
 
 
     - File existence and regular-file type
@@ -98,8 +91,6 @@ def validate_python(
 
     Usage::
 
-
-
         @validate_python
 
         @validate_python()
@@ -111,9 +102,7 @@ def validate_python(
         validate_python("path/to/file.py")          # CLI / direct call usage
 
 
-
     Args::
-
 
 
         func_or_path (callable, str, pathlib.Path, or None):
@@ -163,7 +152,6 @@ def validate_python(
         Union[callable, bool, function]:
 
 
-
             * In decorator mode: the wrapped function.
 
             * In direct call mode: ``True`` if validation passes,
@@ -174,8 +162,6 @@ def validate_python(
 
     Raises:
 
-
-
         PythonValidationError: If validation fails in decorator mode, or if
 
             the decorated function has no arguments, the target argument is
@@ -185,70 +171,36 @@ def validate_python(
     """
 
     # Resolve optional limit to its default if not provided
-
     resolved_size = DEFAULT_MAX_FILE_SIZE if max_file_size is None else max_file_size
 
-    # ------------------------------------------------------------------ #
-
     # MODE DETECTION HEURISTIC
-
-    # ------------------------------------------------------------------ #
 
     def _looks_like_file_path(s):
         """Heuristic: does this string look like a file path?"""
 
         if s.startswith(("/", "\\\\")):
-
             return True  # absolute path
-
         if "/" in s or "\\\\" in s:
-
             return True  # contains path separators
-
-        if "." in s and not s.startswith("."):
-
-            # Contains a dot that looks like a file extension (e.g., "file.py")
-
+        if "." in s and not s.startswith(
+            "."
+        ):  # Contains a dot that looks like a file extension (e.g., "file.py")
             return True
-
         return False
 
     is_decorator_mode = False
-
-    if func_or_path is None:
-
-        # @validate_python() — decorator factory
-
+    if func_or_path is None:  # @validate_python() — decorator factory
         is_decorator_mode = True
-
-    elif callable(func_or_path):
-
-        # @validate_python — bare decorator, func_or_path is the function
-
+    elif callable(func_or_path):  # @validate_python — bare decorator, func_or_path is the function
         is_decorator_mode = True
-
-    elif isinstance(func_or_path, str):
-
-        # Could be direct call or target arg name
-
+    elif isinstance(func_or_path, str):   # Could be direct call or target arg name
         is_decorator_mode = not _looks_like_file_path(func_or_path)
-
-    elif isinstance(func_or_path, Path):
-
-        # Path objects are ALWAYS direct call
-
+    elif isinstance(func_or_path, Path):    # Path objects are ALWAYS direct call
         is_decorator_mode = False
-
-    # ------------------------------------------------------------------ #
-
-    # 1. DIRECT CALL / CLI MODE
-
-    # ------------------------------------------------------------------ #
-
+    
+    # DIRECT CALL / CLI MODE
     if not is_decorator_mode and isinstance(func_or_path, (str, Path)):
-
         try:
-
             _validate_python_file(
                 func_or_path,
                 resolved_size,
@@ -259,66 +211,35 @@ def validate_python(
                 allow_symlinks=allow_symlinks,
                 parse_timeout=parse_timeout,
             )
-
             return True
-
         except Exception as e:
-
             print(f"Exception: {e}")
-
             return False
-
-    # ------------------------------------------------------------------ #
-
-    # 2. DECORATOR MODE
-
-    # ------------------------------------------------------------------ #
-
+   
+    # DECORATOR MODE
     def decorator(f):
-
         sig = inspect.signature(f)
-
         params = list(sig.parameters.keys())
-
         if not params:
-
             raise PythonValidationError(
                 f"Decorator applied to '{f.__name__}', but it has no arguments."
             )
-
         # Determine target argument name
-
         if isinstance(func_or_path, str) and func_or_path in params:
-
             target_arg = func_or_path
-
-        else:
-
-            # Default to the very first parameter
-
+        else:   # Default to the very first parameter
             target_arg = params[0]
-
         @wraps(f)
         def wrapper(*args, **kwargs):
-
             try:
-
                 bound_args = sig.bind(*args, **kwargs)
-
                 bound_args.apply_defaults()
-
             except TypeError as e:
-
                 raise PythonValidationError(f"Invalid function call signature: {e}")
-
             p = bound_args.arguments.get(target_arg)
-
             if p is None:
-
                 raise PythonValidationError(f"Missing required argument: {target_arg}")
-
             if isinstance(p, (str, Path)):
-
                 _validate_python_file(
                     p,
                     resolved_size,
@@ -329,23 +250,16 @@ def validate_python(
                     allow_symlinks=allow_symlinks,
                     parse_timeout=parse_timeout,
                 )
-
             else:
-
                 raise PythonValidationError(
                     f"Expected Path or str for {target_arg}, got {type(p).__name__}"
                 )
-
             return f(*args, **kwargs)
-
         return wrapper
 
     # If used as bare `@validate_python`, func_or_path is the function itself
-
     if callable(func_or_path):
-
         return decorator(func_or_path)
-
     return decorator
 
 
@@ -360,47 +274,25 @@ def _validate_python_file(
     parse_timeout=DEFAULT_PARSE_TIMEOUT,
 ):
     """Secure Python source validation with size, existence, encoding and AST protection.
-
-
-
     Internal function!
 
-
-
-    Validates a local Python source file by checking its existence, type,
-
-    extension and file size *before* reading it into memory. Then enforces
-
-    UTF-8 decoding, rejects null bytes, and finally runs ``ast.parse`` while
-
-    catching resource-exhaustion errors that can crash the interpreter.
-
-
+    Validates a local Python source file by checking its existence, type,extension and file size *before* reading it into memory. Then enforces
+    UTF-8 decoding, rejects null bytes, and finally runs ``ast.parse`` while catching resource-exhaustion errors that can crash the interpreter.
 
     Args:
 
         path (pathlib.Path or str): Local path to a ``.py`` file.
-
         max_file_size (int): Maximum allowed size in bytes.
-
         max_lines (int): Maximum allowed line count.
-
         max_line_length (int): Maximum allowed characters per line.
-
         max_ast_nodes (int): Maximum allowed AST nodes after parsing.
-
         allowed_base_dir (str or Path or None): Directory the file must reside in.
-
         allow_symlinks (bool): Whether to permit symbolic links.
-
         parse_timeout (int): Seconds to allow for parsing (Unix ``SIGALRM`` only).
 
 
-
     Returns:
-
         None: Completes silently on success.
-
 
 
     Raises:
@@ -413,170 +305,96 @@ def _validate_python_file(
 
     """
 
-    # ------------------------------------------------------------------ #
-
-    # 0. Resolve to local path
-
-    # ------------------------------------------------------------------ #
-
+    # Resolve to local path
     local_path = Path(path)
-
-    # ------------------------------------------------------------------ #
-
-    # 1. Extension check (.py)
-
-    # ------------------------------------------------------------------ #
-
+    
+    # Extension check (.py)
     if local_path.suffix.lower() != ".py":
-
         raise PythonValidationError(
             f"Only .py files are accepted (got extension '{local_path.suffix}'): {local_path}"
         )
-
-    # ------------------------------------------------------------------ #
-
-    # 2. Existence, Type, Symlink and Traversal Checks
-
-    # ------------------------------------------------------------------ #
-
+    
+    # Existence, Type, Symlink and Traversal Checks
     if not local_path.exists():
-
         raise PythonValidationError(f"File not found: {local_path}")
-
     if not local_path.is_file():
-
         raise PythonValidationError(f"Path is not a file: {local_path}")
-
-    # 2a. Symlink guard
-
+    # Symlink guard
     if local_path.is_symlink() and not allow_symlinks:
-
         raise PythonValidationError(
             f"Symlinks are not allowed (set allow_symlinks=True to permit): {local_path}"
         )
-
-    # 2b. Directory containment / path-traversal guard
-
+    # Directory containment / path-traversal guard
     if allowed_base_dir is not None:
-
         try:
-
             resolved_file = local_path.resolve(strict=True)
-
             resolved_base = Path(allowed_base_dir).resolve()
-
             try:
-
                 resolved_file.relative_to(resolved_base)
-
             except ValueError:
-
                 raise PythonValidationError(
                     f"Path traversal detected: {local_path} resolves to "
                     f"{resolved_file}, which is outside allowed base "
                     f"directory {allowed_base_dir}"
                 )
-
         except OSError as e:
-
             raise PythonValidationError(
                 f"Could not resolve path for traversal check: {e}"
             ) from e
 
-    # ------------------------------------------------------------------ #
-
-    # 3. DoS Mitigation: Check file size BEFORE reading into memory
-
-    # ------------------------------------------------------------------ #
-
+    # DoS Mitigation: Check file size BEFORE reading into memory
     try:
-
         file_size = local_path.stat().st_size
-
         if file_size > max_file_size:
-
             raise PythonValidationError(
                 f"File size ({file_size} bytes) exceeds maximum limit of "
                 f"{max_file_size} bytes"
             )
-
     except OSError as e:
-
         raise PythonValidationError(f"Could not read file metadata: {e}") from e
 
-    # ------------------------------------------------------------------ #
-
-    # 4. Safe reading, null-byte check, encoding and AST parsing
-
-    # ------------------------------------------------------------------ #
-
-    try:
-
-        # Read as bytes first so we can strip a BOM before strict decode
-
+    # Safe reading, null-byte check, encoding and AST parsing
+    try:  # Read as bytes first so we can strip a BOM before strict decode
         raw_bytes = local_path.read_bytes()
-
         if raw_bytes.startswith(b"\xef\xbb\xbf"):
-
             raw_bytes = raw_bytes[3:]
-
         try:
-
             source = raw_bytes.decode("utf-8", errors="strict")
-
         except UnicodeDecodeError as e:
-
             raise PythonValidationError(f"File is not valid UTF-8: {e}") from e
-
         # Null-byte rejection (ast.parse also raises, but we fail early)
-
         if "\0" in source:
-
             raise PythonValidationError("Null byte (\\\0) found in source — rejected")
-
         # Line count and line length check (tokenizer DoS protection)
-
         line_count = 0
-
         for line in source.splitlines():
-
             line_count += 1
-
             if line_count > max_lines:
-
                 raise PythonValidationError(
                     f"File contains {line_count} lines, exceeding limit of {max_lines}"
                 )
-
             if len(line) > max_line_length:
-
                 raise PythonValidationError(
                     f"Line {line_count} length ({len(line)}) exceeds maximum "
                     f"limit of {max_line_length} characters"
                 )
 
         # AST parse — the critical security-relevant step
-        # Official docs warn that sufficiently large/complex input can
-        # crash the interpreter via stack-depth limits.
+        # Official docs warn that sufficiently large/complex input can crash the interpreter via stack-depth limits.
         tree = None
-
-        # SIGALRM is Unix-specific and may be missing or only partially
-        # implemented in runtimes such as Pyodide. Check all required APIs.
+        # SIGALRM is Unix-specific and may be missing or only partially implemented in runtimes such as Pyodide.
         alarm_supported = (
             hasattr(signal, "SIGALRM")
             and callable(getattr(signal, "signal", None))
             and callable(getattr(signal, "alarm", None))
         )
-
         try:
             if alarm_supported and parse_timeout > 0:
-
                 def _timeout_handler(signum, frame):
                     raise PythonValidationError(
                         f"AST parsing timed out after {parse_timeout} seconds "
                         "(possible pathological input)"
                     )
-
                 old_handler = None
                 old_alarm = 0
                 handler_installed = False
@@ -588,8 +406,7 @@ def _validate_python_file(
                     old_alarm = signal.alarm(parse_timeout)
                     alarm_started = True
                 except (AttributeError, NotImplementedError, OSError, ValueError):
-                    # Signal APIs can exist but still be unsupported in the
-                    # current runtime/thread. Restore state and parse normally.
+                    # Signal APIs can exist but still be unsupported in the current runtime/thread. Restore state and parse normally.
                     if handler_installed:
                         try:
                             signal.signal(signal.SIGALRM, old_handler)
@@ -605,8 +422,7 @@ def _validate_python_file(
                     try:
                         tree = ast.parse(source, filename=str(local_path))
                     finally:
-                        # Cancel our alarm, restore any previous alarm, and
-                        # put back the original signal handler.
+                        # Cancel our alarm, restore any previous alarm, and put back the original signal handler.
                         if alarm_started:
                             signal.alarm(0)
                             if old_alarm:
@@ -616,52 +432,31 @@ def _validate_python_file(
             else:
                 # No signal timeout is available (for example, in Pyodide).
                 tree = ast.parse(source, filename=str(local_path))
-
         except SyntaxError as e:
-
             raise PythonValidationError(
                 f"Invalid Python syntax at line {e.lineno}: {e.msg}"
             ) from e
-
         except ValueError as e:
-
             # e.g. null bytes that somehow slipped through, or other parser errors
-
             raise PythonValidationError(f"AST parse ValueError: {e}") from e
-
         except MemoryError:
-
             raise PythonValidationError(
                 "Memory exhaustion during AST parsing (possible DoS input)"
             )
-
         except RecursionError:
-
             raise PythonValidationError(
                 "Recursion limit / stack depth exceeded during AST parsing "
                 "(possible pathological input)"
             )
 
         # AST node count check — protects downstream SAST walkers from DoS
-
         node_count = sum(1 for _ in ast.walk(tree))
-
         if node_count > max_ast_nodes:
-
             raise PythonValidationError(
                 f"AST contains {node_count} nodes, exceeding maximum limit of "
                 f"{max_ast_nodes} (possible DoS against AST walkers)"
             )
-
-    except PythonValidationError:
-
-        # Re-raise our own exceptions unchanged
-
+    except PythonValidationError:   # Re-raise our own exceptions unchanged
         raise
-
-    except Exception as e:
-
-        # Catch-all for rare OS/permission/TOCTOU issues
-
+    except Exception as e:  # Catch-all for rare OS/permission/TOCTOU issues
         raise PythonValidationError(f"Python validation failed: {e}") from e
-
