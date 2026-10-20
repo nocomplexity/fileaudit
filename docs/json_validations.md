@@ -28,10 +28,19 @@ Be cautious when parsing JSON data from untrusted sources or third parties. From
 
 ## Usage Options
 
-The `validate_json` function accepts the following parameters to customize validation behaviour:
+### Importing the Function
 
+To validate JSON data, import validate_json from the fileaudit package:
+
+```
+from fileaudit.json_check import validate_json
+```
 
 ### Parameters
+
+
+The `validate_json` function accepts the following parameters to customize validation behaviour:
+
 
 | Parameter | Type | Default | Description |
 |-----------|------|---------|-------------|
