@@ -1,5 +1,7 @@
 # Contribute
 
+## A Warm Welcome
+
 Great that you want to contribute!
 
 :::{tip}
@@ -29,6 +31,7 @@ The **File Audit** code repository is hosted at [Github](https://github.com/noco
 Simple Guidelines:
 
 * Questions, Feature Requests, Bug Reports should all be reported on the [Github Issue Tracker](https://github.com/nocomplexity/fileaudit/issues) .
+* Make the pull request *small*, so one issue or improvement per pull request. All improvements are verified by a human!
 * [Black](https://black.readthedocs.io/en/stable/index.html) is used for code style. But for a simple fix, using `Black` is not required!
 
 This fileaudit tool is designed by applying [Zero Complexity By Design principles](https://nocomplexity.com/documents/0complexity/abstract.html). So the goal is to keep the tool simple to use and the code simple to adjust or to extend.
@@ -69,7 +72,7 @@ Follow these steps to create a local development environment so you can contribu
 ### 1. Create and activate a Conda environment
 
 ```bash
-conda create --name fileaudit_dev python=3.14
+conda create --name fileaudit_dev python=3.15
 conda activate fileaudit_dev
 ```
 
@@ -110,6 +113,11 @@ pip install "jupyter-book<2"
 ```
 
 You can then build the docs locally from the `docs/` directory using the standard Jupyter Book commands. 
+To build the documentation, switch to the documentation directory, `cd docs` from the project root and do:
+
+```bash
+jb build .
+```
 
 But mind the manual is automatically build using a gitbub action when files under `docs` are changed.
 
@@ -142,3 +150,7 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be repor
 This code of conduct applies both within project spaces and in public spaces when an individual is representing the project or its community.
 
 This Code of Conduct is adapted from the [Contributor Covenant](http://contributor-covenant.org), version 1.2.0, available at [http://contributor-covenant.org/version/1/2/0/](https://www.contributor-covenant.org/version/1/2/0/code-of-conduct/).
+
+
+```{include} ai_policy.md
+```

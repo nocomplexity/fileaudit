@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 0.2.4
+
+**Added**
+
+* Added AI/LLM policy in the "Contribute" section.
+
+* Added validation and confirmed support for Python 3.15.
+
+**Changed**
+
+* Improved test scripts.
+
+* Enhanced Python validation code.
+
+* Made minor improvements to the output text displayed in the CLI.
+
+**Fixed**
+
+* Fixed GitHub Action workflow warning regarding Node.js 20 deprecation for automated documentation builds.
+
+* Applied manual improvements and general fixes.
+
+**Documentation**
+
+* Improvements and updates
+
+
+
+
 ## Version 0.2.3
 
 ### Changed
