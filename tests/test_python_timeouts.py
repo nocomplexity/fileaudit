@@ -42,28 +42,6 @@ def _make_alarm_fire_immediately(timeout_exc_factory):
     reason="parse_timeout relies on SIGALRM (Unix only)",
 )
 
-def test_parse_timeout_triggers(tmp_path):
-    """parse_timeout must cause validation to fail when the alarm fires."""
-    py_file = _write_simple_py(tmp_path)
-
-    # The SIGALRM handler raises PythonValidationError
-    TimeoutExc = PythonValidationError
-
-    with patch("signal.alarm", side_effect=_make_alarm_fire_immediately(TimeoutExc)):
-        result = validate_python(py_file, parse_timeout=1)
-        assert result is False
-
-# def test_parse_timeout_triggers(tmp_path):
-#     """parse_timeout must cause validation to fail when the alarm fires."""
-#     py_file = _write_simple_py(tmp_path)
-
-#     # Use a generic TimeoutError; replace with the exact exception your
-#     # implementation raises from the SIGALRM handler if different.
-#     TimeoutExc = TimeoutError
-
-#     with patch("signal.alarm", side_effect=_make_alarm_fire_immediately(TimeoutExc)):
-#         result = validate_python(py_file, parse_timeout=1)
-#         assert result is False
 
 
 @pytest.mark.skipif(

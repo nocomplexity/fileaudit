@@ -90,6 +90,25 @@ DEFAULT_PARSE_TIMEOUT = 10  # seconds
 
 ## How to use the checks
 
+To use the validation features in your program, follow these steps:
+
+**Installation:**
+
+Install `fileaudit` directly from PyPI using pip:
+
+```bash
+pip install fileaudit
+
+```
+**Import the module:**
+
+Import the `python_check` function of `fileaudit` into your Python script:
+
+```python
+from fileaudit.python_check import validate_python
+```
+
+
 **Decorator mode** (validates a path argument before the function body runs):
 
 ```python
