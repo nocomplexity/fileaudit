@@ -93,22 +93,26 @@ def test_direct_call_https_url(mock_validate):
 # ---------------------------------------------------------------------------
 # 2. Direct-call / CLI mode – failure (swallows & returns False)
 # ---------------------------------------------------------------------------
-def test_direct_call_validation_failure_returns_false(mock_validate, capsys):
+
+def test_direct_call_validation_failure(mock_validate):
+    """Checks that direct-call validation propagates FileValidationError."""
     mock_validate.side_effect = FileValidationError("boom")
-    result = validate_json("https://example.com/bad.json")
-    assert result is False
-    captured = capsys.readouterr()
-    assert "Exception: FileAudit Security Validation Failed - boom" in captured.out
-    # or, more loosely:
-    # assert "FileAudit Security Validation Failed - boom" in captured.out
+
+    with pytest.raises(FileValidationError, match="boom"):
+        validate_json("https://example.com/bad.json")
 
 
-
-def test_direct_call_unexpected_exception_returns_false(mock_validate, capsys):
+def test_direct_call_unexpected_exception(mock_validate, capsys):
+    """Checks that unexpected exceptions propagate without console output."""
     mock_validate.side_effect = RuntimeError("unexpected")
-    result = validate_json("/tmp/whatever.json")
-    assert result is False
-    assert "Exception: unexpected" in capsys.readouterr().out
+
+    with pytest.raises(RuntimeError, match="unexpected"):
+        validate_json("/tmp/whatever.json")
+
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert captured.err == ""
+
 
 
 # ---------------------------------------------------------------------------

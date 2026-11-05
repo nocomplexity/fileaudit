@@ -210,15 +210,18 @@ class TestValidateJsonDirectCall:
         result = validate_json(valid_json_file)
         assert result is True
 
-    def test_direct_call_local_invalid(self, invalid_json_file):
-        """Should return False for invalid local file."""
-        result = validate_json(str(invalid_json_file))
-        assert result is False
-
     def test_direct_call_local_missing(self, tmp_path):
-        """Should return False for missing local file."""
-        result = validate_json(str(tmp_path / "missing.json"))
-        assert result is False
+        """Should raise FileValidationError for a missing local file."""
+        missing_file = tmp_path / "missing.json"
+
+        with pytest.raises(FileValidationError, match="File not found"):
+            validate_json(str(missing_file))
+
+    def test_direct_call_local_invalid(self, invalid_json_file):
+        """Should raise FileValidationError for an invalid local JSON file."""
+        with pytest.raises(FileValidationError, match="Invalid JSON format"):
+            validate_json(str(invalid_json_file))
+
 
     def test_direct_call_remote_valid(self):
         """Should return True for valid remote HTTPS URL."""
@@ -226,11 +229,13 @@ class TestValidateJsonDirectCall:
         result = validate_json(url)
         assert result is True
 
-    def test_direct_call_remote_http_rejected(self):
-        """Should return False for HTTP URL."""
-        result = validate_json("http://example.com/data.json")
-        assert result is False
 
+    def test_direct_call_remote_http_rejected(self):
+        """Should raise FileValidationError for an HTTP URL."""
+        with pytest.raises(FileValidationError, match="only 'https' is allowed"):
+            validate_json("http://example.com/data.json")
+
+   
     def test_direct_call_with_custom_depth(self, deep_json_file):
         """Should use custom depth limit."""
         result = validate_json(
@@ -245,19 +250,22 @@ class TestValidateJsonDirectCall:
         )
         assert result is True
 
+
     def test_direct_call_size_exceeded(self, large_json_file):
-        """Should return False when file exceeds custom size."""
-        result = validate_json(
-            str(large_json_file), max_file_size=DEFAULT_MAX_FILE_SIZE
-        )
-        assert result is False
+        """Should raise FileValidationError when file exceeds custom size."""
+        with pytest.raises(FileValidationError, match="exceeds maximum limit"):
+            validate_json(
+                str(large_json_file), max_file_size=DEFAULT_MAX_FILE_SIZE
+            )
+
 
     def test_direct_call_depth_exceeded(self, deep_json_file):
-        """Should return False when depth exceeds custom limit."""
-        result = validate_json(
-            str(deep_json_file), max_depth=DEFAULT_MAX_DEPTH
-        )
-        assert result is False
+        """Should raise FileValidationError when JSON depth exceeds the limit."""
+        with pytest.raises(FileValidationError, match="JSON nesting depth exceeded"):
+            validate_json(
+                str(deep_json_file), max_depth=DEFAULT_MAX_DEPTH
+            )
+
 
 
 # =============================================================================

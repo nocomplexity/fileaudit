@@ -9,7 +9,7 @@ import json
 from pathlib import Path
 import pytest
 
-from fileaudit.json_check import validate_json
+from fileaudit.json_check import validate_json , FileValidationError
 
 
 # Test data paths
@@ -42,6 +42,9 @@ def test_remote_json_check():
 
 
 def test_remote_json_check_error():
-    """Checks OK flow for valid remote json"""
-    remote_json = "https://pypi.org/pypi/codeaudid/json" 
-    assert validate_json(remote_json) is False
+    """Checks that an invalid remote JSON URL raises FileValidationError."""
+    remote_json = "https://pypi.org/pypi/codeaudid/json"
+
+    with pytest.raises(FileValidationError):
+        validate_json(remote_json)
+

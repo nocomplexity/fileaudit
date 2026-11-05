@@ -129,8 +129,7 @@ def validate_json(func_or_path=None, max_depth=None, max_file_size=None):
     Returns:
         Union[callable, bool, function]:
             * In decorator mode: the wrapped function.
-            * In direct call mode: ``True`` if validation passes,
-              ``False`` if it fails (errors are printed to stdout).
+            * In direct call mode: ``True`` if validation passes,else an exception is raised              
 
     Raises:
         FileValidationError: If validation fails in decorator mode, or if
@@ -215,20 +214,12 @@ def validate_json(func_or_path=None, max_depth=None, max_file_size=None):
         # Path objects are ALWAYS direct call (you can't name a param with Path)
         is_decorator_mode = False
 
-    # ------------------------------------------------------------------ #
-    # 1. DIRECT CALL / CLI MODE
-    # ------------------------------------------------------------------ #
+    
+    # Direct call / CLI mode
     if not is_decorator_mode and isinstance(func_or_path, (str, Path)):
-        try:
-            # Pass raw string/Path directly — do NOT wrap in Path() here,
-            # because Path("https://...") mangles URLs to "https:/..." which
-            # breaks urlparse and causes "no host given" errors.
-            _validate_json_file(func_or_path, resolved_depth, resolved_size)
-            return True
-        except Exception as e:
-            print(f"Exception: {e}")
-            return False
-
+        _validate_json_file(func_or_path, resolved_depth, resolved_size)
+        return True
+    
     # ------------------------------------------------------------------ #
     # 2. DECORATOR MODE
     # ------------------------------------------------------------------ #
