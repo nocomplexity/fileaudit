@@ -13,6 +13,8 @@ import threading
 import time
 from functools import wraps
 from pathlib import Path
+from contextlib import suppress
+
 
 
 # Global default fallbacks
@@ -69,8 +71,11 @@ def validate_python(
 
     * **Direct call / CLI mode** – When called with a file path
       (``str`` or ``pathlib.Path``), the file is validated immediately.
-      Returns ``True`` on success. Raises :exc:`PythonValidationError` on
-      any validation failure.
+      Returns ``True`` on success. 
+      
+      Raises : **`PythonValidationError`** on any validation failure. 
+      If an error occurs, an exception is raised. You can catch it or let it propagate depending on your needs.
+      
     * **Decorator mode** – When used as ``@validate_python``, 
       ``@validate_python()``, or ``@validate_python("arg_name")``, the
       decorated function’s selected ``str``/``Path`` argument is validated
@@ -283,12 +288,8 @@ def _is_within_directory(candidate, base):
 
 def _opened_file_path(fd, fallback):
     """Best-effort path of an already-open file descriptor."""
-    proc_path = Path(f"/proc/self/fd/{fd}")
-    try:
-        if proc_path.exists():
-            return proc_path.resolve(strict=True)
-    except OSError:
-        pass
+    with suppress(OSError):
+        return Path(f"/proc/self/fd/{fd}").resolve(strict=True)
     return fallback.resolve(strict=True)
 
 
@@ -354,9 +355,7 @@ def _parse_with_timeout(source, filename, parse_timeout):
         return ast.parse(source, filename=filename)
 
     if previous_remaining > 0:
-        return ast.parse(source, filename=filename)
-
-    started = time.monotonic()
+        return ast.parse(source, filename=filename)    
 
     def timeout_handler(signum, frame):
         raise PythonValidationError(
