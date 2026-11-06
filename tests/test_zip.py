@@ -87,15 +87,8 @@ def test_direct_call_returns_false_when_validation_fails(
     failing_zip_validator(
         ZipValidationError("ZIP contains unsafe path")
     )
-
-    result = validate_zip("archive.zip")
-
-    assert result is False
-
-    captured = capsys.readouterr()
-
-    assert "Exception:" in captured.out
-    assert "ZIP contains unsafe path" in captured.out
+    with pytest.raises(ZipValidationError):
+        validate_zip("archive.zip")
 
     def test_direct_call_catches_unexpected_exception(
         failing_zip_validator,

@@ -183,7 +183,6 @@ def _validate_url_scheme(path_str):
     return True
 
 
-
 def _looks_like_file_path(s):
     """Heuristic: does this string look like a file path or URL?"""
     if s.startswith("https://"):
@@ -211,11 +210,15 @@ def _validate_zip_file(
     max_filename_length,
     max_directory_depth,
 ):
-    """
-    Validate a ZIP archive without extracting it.
-    Supports both local file paths and remote HTTPS URLs.
+    """Validate a ZIP archive without extracting it.
+
+    Supports local filesystem paths and remote HTTPS URLs. Remote archives
+    are downloaded to a temporary file, subject to ``max_file_size``, and
+    the temporary file is removed whether validation succeeds or fails.
+
     Raises:
-        ZipValidationError: If the archive fails any security check.
+        ZipValidationError: If the archive fails any security check or
+            cannot be accessed.
     """
     _validate_limits(
         max_file_size=max_file_size,
@@ -228,86 +231,17 @@ def _validate_zip_file(
     )
 
     path_str = str(path)
-    if is_remote:
-        request = urllib.request.Request(
-        path_str,
-        headers={
-            "User-Agent": "FileAudit-ZIPValidator/1.0",
-        },
-        method="GET",
-    )
 
-    try:
-        with _https_opener.open(
-            request,
-            timeout=DOWNLOAD_TIMEOUT,
-        ) as response:
-
-            # Validate the final URL as well.
-            final_url = response.geturl()
-            _validate_url_scheme(final_url)
-
-            tmp = tempfile.NamedTemporaryFile(
-                delete=False,
-                suffix=".zip",
-            )
-
-            temp_path = tmp.name
-
-            try:
-                total = 0
-
-                while True:
-                    chunk = response.read(65536)
-
-                    if not chunk:
-                        break
-
-                    total += len(chunk)
-
-                    if total > max_file_size:
-                        raise ZipValidationError(
-                            "Remote file exceeded maximum size "
-                            f"({max_file_size} bytes) during download"
-                        )
-
-                    tmp.write(chunk)
-
-            finally:
-                tmp.close()
-
-            path = temp_path
-
-    except ZipValidationError:
-        raise
-
-    except urllib.error.HTTPError as e:
-        raise ZipValidationError(
-            f"Remote file unreachable (HTTP {e.code}): "
-            f"{path_str}"
-        ) from e
-
-    except urllib.error.URLError as e:
-        raise ZipValidationError(
-            f"Could not reach remote file: {path_str} — "
-            f"{e.reason}"
-        ) from e
-
-    except OSError as e:
-        raise ZipValidationError(
-            f"Unable to download remote ZIP: {path_str} — {e}"
-        ) from e
-        
+    # Determine the input type before referencing ``is_remote``.
     is_remote = _validate_url_scheme(path_str)
     temp_path = None
 
     try:
+        # Download remote HTTPS archives exactly once.
         if is_remote:
             request = urllib.request.Request(
                 path_str,
-                headers={
-                    "User-Agent": "FileAudit-ZIPValidator/1.0",
-                },
+                headers={"User-Agent": "FileAudit-ZIPValidator/1.0"},
                 method="GET",
             )
 
@@ -316,63 +250,50 @@ def _validate_zip_file(
                     request,
                     timeout=DOWNLOAD_TIMEOUT,
                 ) as response:
-
-                    # Validate the final URL as well.
                     final_url = response.geturl()
-                    _validate_url_scheme(final_url)
+                    if not _validate_url_scheme(final_url):
+                        raise ZipValidationError(
+                            "Remote download did not resolve to an HTTPS URL."
+                        )
 
-                    tmp = tempfile.NamedTemporaryFile(
+                    with tempfile.NamedTemporaryFile(
+                        mode="wb",
                         delete=False,
                         suffix=".zip",
-                    )
-
-                    temp_path = tmp.name
-
-                    try:
+                    ) as tmp:
+                        temp_path = tmp.name
                         total = 0
 
                         while True:
                             chunk = response.read(65536)
-
                             if not chunk:
                                 break
 
                             total += len(chunk)
-
                             if total > max_file_size:
                                 raise ZipValidationError(
                                     "Remote file exceeded maximum size "
                                     f"({max_file_size} bytes) during download"
                                 )
-
                             tmp.write(chunk)
 
-                    finally:
-                        tmp.close()
-
-                    path = temp_path
+                path = temp_path
 
             except ZipValidationError:
                 raise
-
             except urllib.error.HTTPError as e:
                 raise ZipValidationError(
-                    f"Remote file unreachable (HTTP {e.code}): "
-                    f"{path_str}"
+                    f"Remote file unreachable (HTTP {e.code}): {path_str}"
                 ) from e
-
             except urllib.error.URLError as e:
                 raise ZipValidationError(
-                    f"Could not reach remote file: {path_str} — "
-                    f"{e.reason}"
+                    f"Could not reach remote file: {path_str} — {e.reason}"
                 ) from e
-
-            except OSError as e:
+            except (OSError, TimeoutError) as e:
                 raise ZipValidationError(
                     f"Unable to download remote ZIP: {path_str} — {e}"
                 ) from e
 
-        
         # === Existing local-file validation logic =================================
         path = Path(path)
 
@@ -678,7 +599,7 @@ def validate_zip(
 
         In direct mode:
 
-        - True if validation succeeds, False otherwise.
+        - True if validation succeeds, Exception otherwise.
 
     Raises:
 
@@ -740,21 +661,17 @@ def validate_zip(
     # Direct call / CLI mode.
     # ---------------------------------------------------------------
     if not is_decorator_mode and isinstance(func_or_path, (str, Path)):
-        try:
-            _validate_zip_file(
-                func_or_path,
-                resolved_file_size,
-                resolved_ratio,
-                resolved_members,
-                resolved_total_size,
-                resolved_individual_size,
-                resolved_filename_len,
-                resolved_depth,
-            )
-            return True
-        except ZipValidationError as e:
-            print(f"Exception: {e}")
-            return False
+        _validate_zip_file(
+            func_or_path,
+            resolved_file_size,
+            resolved_ratio,
+            resolved_members,
+            resolved_total_size,
+            resolved_individual_size,
+            resolved_filename_len,
+            resolved_depth,
+        )
+        return True
 
     # ---------------------------------------------------------------
     # Decorator mode.
