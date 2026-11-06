@@ -29,47 +29,5 @@ XML_VALIDATION_DIR = Path(__file__).parent / "validationfiles" / "xml"
     ],
 )
 def test_invalid_xml_files(filename):
-    assert validate_xml(XML_VALIDATION_DIR / filename) is False
-
-
-# def test_xml_bomb_check():
-#     """for remote files - only https is allowed"""
-#     current_file_directory = Path(__file__).parent
-#     validation_file = current_file_directory / "validationfiles" / "xml" / "xmlbomb.xml"
-#     result = validate_xml(validation_file)    
-#     assert result is False
-
-# def test_xml_bomb_check2():
-#     """for remote files - only https is allowed"""
-#     current_file_directory = Path(__file__).parent
-#     validation_file = current_file_directory / "validationfiles" / "xml" / "xmlbomb2.xml"
-#     result = validate_xml(validation_file)    
-#     assert result is False
-
-# def test_xml_cyclic_check():
-#     """for remote files - only https is allowed"""
-#     current_file_directory = Path(__file__).parent
-#     validation_file = current_file_directory / "validationfiles" / "xml" / "cyclic.xml"
-#     result = validate_xml(validation_file)    
-#     assert result is False
-
-# def test_xml_external_doctype_check():
-#     """for remote files - only https is allowed"""
-#     current_file_directory = Path(__file__).parent
-#     validation_file = current_file_directory / "validationfiles" / "xml" / "external.xml"
-#     result = validate_xml(validation_file)    
-#     assert result is False
-
-# def test_xml_external_exapansion():
-#     """for remote files - only https is allowed"""
-#     current_file_directory = Path(__file__).parent
-#     validation_file = current_file_directory / "validationfiles" / "xml" / "expansion.xml"
-#     result = validate_xml(validation_file)    
-#     assert result is False
-
-# def test_xml_external_bomb3():
-#     """for remote files - only https is allowed"""
-#     current_file_directory = Path(__file__).parent
-#     validation_file = current_file_directory / "validationfiles" / "xml" / "xmlbomb3.xml"
-#     result = validate_xml(validation_file)    
-#     assert result is False
+    with pytest.raises(FileValidationError) as exc_info:
+        validate_xml(XML_VALIDATION_DIR / filename)

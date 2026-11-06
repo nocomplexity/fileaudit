@@ -516,7 +516,7 @@ def validate_xml(
        passed as an argument before the function body runs.
 
     2. Direct call / CLI mode — validates a file immediately and
-       returns a boolean result.
+       returns True on succes or an Exception on Failure
 
     Usage:
         @validate_xml
@@ -553,7 +553,7 @@ def validate_xml(
         Union[callable, bool, function]:
             * In decorator mode: the wrapped function.
             * In direct call mode: ``True`` if validation passes,
-              ``False`` if it fails (errors are printed to stdout).
+              ``Exception`` if it fails 
 
     Raises:
         FileValidationError: If validation fails in decorator mode, or if
@@ -614,8 +614,7 @@ def validate_xml(
         (str, Path),
     ) and _looks_like_file_path(
         str(func_or_path)
-    ):
-        try:
+    ):        
             _validate_xml_file(
                 func_or_path,
                 max_depth=resolved_depth,
@@ -627,9 +626,6 @@ def validate_xml(
             )
 
             return True
-
-        except FileValidationError:
-            return False
 
     # Decorator
     def decorator(func):

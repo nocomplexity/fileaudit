@@ -74,15 +74,15 @@ class TestValidateXML:
     
     def test_direct_invocation_invalid_xml(self, invalid_xml_file):
         """Test direct invocation with invalid XML returns False."""
-        result = validate_xml(str(invalid_xml_file))
-        assert result is False
+        with pytest.raises(FileValidationError):
+            validate_xml(str(invalid_xml_file))        
         self.cleanup_files(invalid_xml_file)
     
     def test_direct_invocation_nonexistent_file(self):
         """Test direct invocation with nonexistent file returns False."""
-        result = validate_xml('/nonexistent/file.xml')
-        assert result is False
-
+        with pytest.raises(FileValidationError):
+            validate_xml('/nonexistent/file.xml')
+        
         
     def test_direct_invocation_custom_limits(self, valid_xml_file):
         """Test direct invocation with custom validation limits."""
@@ -181,8 +181,8 @@ class TestValidateXML:
             non_xml_path = Path(f.name)
         
         # Since _looks_like_file_path sees .txt as file path, it will attempt validation
-        result = validate_xml(str(non_xml_path))
-        assert result is False
+        with pytest.raises(FileValidationError):
+            validate_xml(str(non_xml_path))
         self.cleanup_files(non_xml_path)
     
     def test_path_like_string_without_extension(self):
@@ -202,10 +202,9 @@ class TestValidateXML:
         """Test validation fails when max_depth is exceeded."""
         # The deep_nested_xml fixture likely creates XML with depth > 10
         # We need to ensure we're passing the path, not the XML content
-        result = validate_xml(str(deep_nested_xml), max_depth=10)
-        assert result is False
-        # self.cleanup_files(deep_nested_xml)  # This should be handled by fixture
-
+        with pytest.raises(FileValidationError):
+            validate_xml(str(deep_nested_xml), max_depth=10)
+       
 
     def test_max_file_size_exceeded(self, tmp_path):
         """Test validation fails when max_file_size is exceeded."""
@@ -218,9 +217,9 @@ class TestValidateXML:
         # The file size should be > 100 bytes
         # Content: "<root>" (6 chars) + 200 'x' + "</root>" (7 chars) = 213 chars
         # With UTF-8 encoding, each 'x' is 1 byte, so total > 100 bytes
-        result = validate_xml(str(large_file), max_file_size=100)
-        assert result is False
-
+        with pytest.raises(FileValidationError):
+            validate_xml(str(large_file), max_file_size=100)
+        
 
     def test_absolute_path_without_extension(self, tmp_path):
         """Test validation with absolute path without extension."""

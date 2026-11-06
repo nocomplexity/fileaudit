@@ -37,5 +37,6 @@ def test_validate_xml_decorator_many_elements():
 def test_https_only_check():
     """for remote files - only https is allowed"""
     no_https_feed = "http://nocomplexity.com/rss"
-    result = validate_xml(no_https_feed)    
-    assert result is False
+    with pytest.raises(FileValidationError):
+        validate_xml(no_https_feed)    
+  
