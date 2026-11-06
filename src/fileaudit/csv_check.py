@@ -620,7 +620,7 @@ def validate_csv(
     This function supports both direct CSV validation and decorator usage.
 
     In direct-invocation mode, the CSV file is validated immediately and the
-    function returns ``True`` when validation succeeds or ``False`` when
+    function returns ``True`` when validation succeeds or gives an Exception when
     validation fails. Local file paths, ``Path`` objects, and URLs are
     supported.
 
@@ -715,7 +715,7 @@ def validate_csv(
 
     Returns:
         In direct-invocation mode, ``True`` if the CSV passes validation or
-        ``False`` if validation fails.
+        gives an Exception if validation fails.
 
         In decorator mode, the decorated function's wrapped callable is
         returned. When invoked, the wrapped function returns the original
@@ -838,16 +838,9 @@ def validate_csv(
     # Direct / CLI mode
     # ---------------------------------------------------------------
 
-    if (
-        not is_decorator_mode
-        and isinstance(func_or_path, (str, Path))
-    ):
-        try:
-            _validate(func_or_path)
-            return True
-        except CsvValidationError as exc:
-            print(f"Exception: {exc}")
-            return False
+    if not is_decorator_mode and isinstance(func_or_path, (str, Path)):
+        _validate(func_or_path)
+        return True
 
     # ---------------------------------------------------------------
     # Decorator mode
@@ -863,8 +856,8 @@ def validate_csv(
                 "but it has no arguments."
             )
 
-        # Explicit argument name:        
-        #     @validate_csv("csv_path")        
+        # Explicit argument name:
+        #     @validate_csv("csv_path")
         if (
             isinstance(func_or_path, str)
             and func_or_path in params
