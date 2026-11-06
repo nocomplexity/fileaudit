@@ -157,8 +157,8 @@ def validate_tar_gz(func_or_path=None,
     
     1. **Decorator mode** — wraps a function to validate a TAR.GZ file path
        passed as an argument before the function body runs.
-    2. **Direct call / CLI mode** — validates a file immediately and returns
-       a boolean result.
+    2. **Direct call / CLI mode** — validates a file immediately and returns True on succes, else an exception is raised.
+       
     
     Security checks performed:
     - File size limits

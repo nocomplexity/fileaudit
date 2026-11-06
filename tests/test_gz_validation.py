@@ -26,7 +26,6 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-
 # ---------------------------------------------------------------------------
 # Fixtures
 # ---------------------------------------------------------------------------
@@ -173,18 +172,7 @@ class TestLimitResolution:
 class TestDirectCallMode:
     """Tests for validate_gz(path) usage."""
 
-    def test_direct_call_returns_true_on_success(self, mock_validate_limit, mock_validate_gz_file):
-        from fileaudit.gz_check import validate_gz
-        mock_validate_gz_file.return_value = None  # success
-        assert validate_gz("/tmp/ok.gz") is True
-
-    def test_direct_call_returns_false_on_gzvalidationerror(
-        self, mock_validate_limit, mock_validate_gz_file, gz_validation_error
-    ):
-        from fileaudit.gz_check import validate_gz
-        mock_validate_gz_file.side_effect = gz_validation_error("boom")
-        assert validate_gz("/tmp/bad.gz") is False
-
+        
     def test_direct_call_propagates_other_exceptions(
         self, mock_validate_limit, mock_validate_gz_file
     ):

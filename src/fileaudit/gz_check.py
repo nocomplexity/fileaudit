@@ -431,7 +431,7 @@ def validate_gz(
 
     1. **Decorator mode** — wraps a function to validate a GZip file path passed as an argument before the function body runs.
 
-    2. **Direct call / CLI mode** — validates a file immediately and returns a boolean result.
+    2. **Direct call / CLI mode** — validates a file immediately and returns True or and exception (on failure).
 
     Security checks performed:
 
@@ -502,7 +502,7 @@ def validate_gz(
         Union[callable, bool, function]:
 
         - In decorator mode: the wrapped function.
-        - In direct call mode: ``True`` if validation passes, ``False`` if validation fails.
+        - In direct call mode: ``True`` if validation passes, an exception if validation fails.
 
     Raises:
 
@@ -551,8 +551,7 @@ def validate_gz(
         "max_uncompressed_size",
         resolved_uncompressed_size
     )
-   
-    
+
     # ---------------------------------------------------------------
     # Determine whether a string looks like a file path
     # ---------------------------------------------------------------
@@ -605,29 +604,13 @@ def validate_gz(
             f"got {type(func_or_path).__name__}"
         )
 
-    # ---------------------------------------------------------------
     # Direct call / CLI mode
-    # ---------------------------------------------------------------
+    if not is_decorator_mode and isinstance(func_or_path, (str, Path)):
+        _validate_gz_file(
+            func_or_path, resolved_file_size, resolved_ratio, resolved_uncompressed_size
+        )
 
-    if not is_decorator_mode and isinstance(
-        func_or_path,
-        (str, Path)
-    ):
-        try:
-            _validate_gz_file(
-                func_or_path,
-                resolved_file_size,
-                resolved_ratio,
-                resolved_uncompressed_size
-            )
-
-            return True
-
-        except GzValidationError:
-            # Direct invocation intentionally has a boolean API.            
-            # Do not catch Exception here: programming/configuration errors
-            # must not be silently hidden.
-            return False
+        return True
 
     # ---------------------------------------------------------------
     # Decorator mode
