@@ -250,17 +250,18 @@ class TestValidateTarGz:
         assert result is True
     
     def test_direct_call_nonexistent_file(self, temp_dir):
-        """Test direct validation with non-existent file."""
-        result = validate_tar_gz(temp_dir / "nonexistent.tar.gz")
-        assert result is False  # Should return False, not raise exception
+        """Test direct validation with non-existent file."""        
+        with pytest.raises(TarValidationError):
+            validate_tar_gz(temp_dir / "nonexistent.tar.gz")
+        
     
     def test_direct_call_invalid_gzip(self, temp_dir):
         """Test direct validation with invalid GZip file."""
         invalid_path = temp_dir / "invalid.tar.gz"
         invalid_path.write_bytes(b"Not a valid gzip file")
+        with pytest.raises(TarValidationError):
+            validate_tar_gz(str(invalid_path))
         
-        result = validate_tar_gz(str(invalid_path))
-        assert result is False
     
     def test_direct_call_with_custom_limits(self, temp_dir, create_tar_gz):
         """Test direct validation with custom limits."""
@@ -619,10 +620,10 @@ class TestIntegration:
         archive_path = temp_dir / "with_symlink.tar.gz"
         tar_buffer.seek(0)
         with gzip.open(archive_path, 'wb') as gz:
-            gz.write(tar_buffer.getvalue())
+            gz.write(tar_buffer.getvalue())        
+        with pytest.raises(TarValidationError):
+            validate_tar_gz(str(archive_path))
         
-        result = validate_tar_gz(str(archive_path))
-        assert result is False
     
     def test_bzip2_not_supported(self, temp_dir):
         """Test that BZip2 compression is not supported (only GZip)."""
@@ -641,8 +642,9 @@ class TestIntegration:
         with bz2.open(archive_path, 'wb') as bz2_file:
             bz2_file.write(tar_buffer.getvalue())
         
-        result = validate_tar_gz(str(archive_path))
-        assert result is False
+        with pytest.raises(TarValidationError):
+            validate_tar_gz(str(archive_path))
+        
 
 
 class TestEdgeCases:
@@ -662,10 +664,9 @@ class TestEdgeCases:
         
         # For empty archive, validation should either return True or False
         # We just verify it returns a boolean
-        result = validate_tar_gz(str(archive_path))
-        assert isinstance(result, bool)
-        # Empty archive might be considered valid by some implementations
-        # The exact result depends on the implementation details
+        with pytest.raises(TarValidationError):
+            validate_tar_gz(str(archive_path))
+        
     
     def test_archive_with_empty_filename(self, temp_dir):
         """Test archive with empty filename."""
@@ -679,8 +680,8 @@ class TestEdgeCases:
         archive_path = temp_dir / "test.tar.gz"
         tar_buffer.seek(0)
         with gzip.open(archive_path, 'wb') as gz:
-            gz.write(tar_buffer.getvalue())
-        
+            gz.write(tar_buffer.getvalue())        
         # Just verify the validation returns a boolean
-        result = validate_tar_gz(str(archive_path))
-        assert isinstance(result, bool)
+        with pytest.raises(TarValidationError):
+            validate_tar_gz(str(archive_path))
+        

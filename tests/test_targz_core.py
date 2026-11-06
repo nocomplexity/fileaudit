@@ -132,20 +132,14 @@ def test_direct_call_https_url(mock_validate):
 # ---------------------------------------------------------------------------
 
 def test_direct_call_validation_failure_returns_false(mock_validate, capsys):
-    mock_validate.side_effect = TarValidationError("boom")
-    result = validate_tar_gz("https://example.com/bad.tar.gz")
-    assert result is False
-    captured = capsys.readouterr()
-    # Implementation prints the exception's string representation
-    assert "Exception:" in captured.out
-    assert "boom" in captured.out
-
-
+    mock_validate.side_effect = TarValidationError("boom")    
+    with pytest.raises(TarValidationError):
+        validate_tar_gz("https://example.com/bad.tar.gz")    
+    
 def test_direct_call_unexpected_exception_returns_false(mock_validate, capsys):
     mock_validate.side_effect = RuntimeError("unexpected")
-    result = validate_tar_gz("/tmp/whatever.tar.gz")
-    assert result is False
-    assert "Exception: unexpected" in capsys.readouterr().out
+    with pytest.raises(RuntimeError, match="unexpected"):
+        validate_tar_gz("/tmp/whatever.tar.gz")
 
 
 # ---------------------------------------------------------------------------

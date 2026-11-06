@@ -197,12 +197,12 @@ def validate_tar_gz(func_or_path=None,
         Union[callable, bool, function]:
             * In decorator mode: the wrapped function.
             * In direct call mode: ``True`` if validation passes,
-              ``False`` if it fails (errors are printed to stdout).
+              else an exception is raised
     
     Raises:
         TarValidationError: If validation fails in decorator mode.
     """
-    
+
     # Resolve optional limits to defaults
     resolved_file_size = DEFAULT_MAX_FILE_SIZE if max_file_size is None else max_file_size
     resolved_ratio = DEFAULT_MAX_UNCOMPRESSED_RATIO if max_uncompressed_ratio is None else max_uncompressed_ratio
@@ -211,7 +211,7 @@ def validate_tar_gz(func_or_path=None,
     resolved_individual_size = DEFAULT_MAX_INDIVIDUAL_FILE_SIZE if max_individual_file_size is None else max_individual_file_size
     resolved_filename_len = DEFAULT_MAX_FILENAME_LENGTH if max_filename_length is None else max_filename_length
     resolved_depth = DEFAULT_MAX_DIRECTORY_DEPTH if max_directory_depth is None else max_directory_depth
-    
+
     def _looks_like_file_path(s):
         """Heuristic: does this string look like a file path or URL?"""
         # ONLY https:// is accepted as a remote URL
@@ -224,9 +224,9 @@ def validate_tar_gz(func_or_path=None,
         if "." in s and not s.startswith("."):
             return True
         return False
-    
+
     is_decorator_mode = False
-    
+
     if func_or_path is None:
         is_decorator_mode = True
     elif callable(func_or_path):
@@ -235,37 +235,33 @@ def validate_tar_gz(func_or_path=None,
         is_decorator_mode = not _looks_like_file_path(func_or_path)
     elif isinstance(func_or_path, Path):
         is_decorator_mode = False
-    
+
     # Direct call / CLI mode
     if not is_decorator_mode and isinstance(func_or_path, (str, Path)):
-        try:
-            _validate_tar_gz_file(
-                func_or_path,
-                resolved_file_size,
-                resolved_ratio,
-                resolved_members,
-                resolved_total_size,
-                resolved_individual_size,
-                resolved_filename_len,
-                resolved_depth
-            )
-            return True
-        except Exception as e:
-            print(f"Exception: {e}")
-            return False
-    
+        _validate_tar_gz_file(
+            func_or_path,
+            resolved_file_size,
+            resolved_ratio,
+            resolved_members,
+            resolved_total_size,
+            resolved_individual_size,
+            resolved_filename_len,
+            resolved_depth,
+        )
+        return True
+
     # Decorator mode
     def decorator(f):
         sig = inspect.signature(f)
         params = list(sig.parameters.keys())
-        
+
         if not params:
             raise TarValidationError(
                 f"Decorator applied to '{f.__name__}', but it has no arguments."
             )
-        
+
         target_arg = func_or_path if isinstance(func_or_path, str) and func_or_path in params else params[0]
-        
+
         @wraps(f)
         def wrapper(*args, **kwargs):
             try:
@@ -273,12 +269,12 @@ def validate_tar_gz(func_or_path=None,
                 bound_args.apply_defaults()
             except TypeError as e:
                 raise TarValidationError(f"Invalid function call signature: {e}")
-            
+
             p = bound_args.arguments.get(target_arg)
-            
+
             if p is None:
                 raise TarValidationError(f"Missing required argument: {target_arg}")
-            
+
             if isinstance(p, (str, Path)):
                 _validate_tar_gz_file(
                     p,
@@ -294,13 +290,13 @@ def validate_tar_gz(func_or_path=None,
                 raise TarValidationError(
                     f"Expected Path or str for {target_arg}, got {type(p).__name__}"
                 )
-            
+
             return f(*args, **kwargs)
         return wrapper
-    
+
     if callable(func_or_path):
         return decorator(func_or_path)
-    
+
     return decorator
 
 
