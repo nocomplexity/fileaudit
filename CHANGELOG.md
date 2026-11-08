@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## Version 0.2.5
+
+**Changed**
+
+- CLI / Direct Call Exception Handling: Improved exception handling across all functions when called directly or via CLI. Exceptions are now propagated directly to the caller function rather than printed to stdout/stderr.
+
+**Fixed**
+
+- python_check Module: Removed print statements when `validate_python` encounters an exception, leaving exception handling entirely to the calling application. `validate_python` now returns True on success and raises an exception on failure.
+
+
+
 ## Version 0.2.4
 
 **Added**
