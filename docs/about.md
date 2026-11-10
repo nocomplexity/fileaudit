@@ -13,6 +13,7 @@ A FreeBSD user since version 4 for its simplicity and rock-solid security, I sti
 
 Currently, I lead initiatives at NoComplexity.com, an innovative IT company focused on straightforward solutions. For more insights and updates, you can find me on X (despite my privacy and other concerns with BigTech...) at [@maikelmardjan](https://X.com/maikelmardjan).
 
+(publications)=
 ## Other NO|Complexity Publications
 
 ### Cyber Security 
