@@ -1,0 +1,44 @@
+name: Release Notes
+
+on:
+  push:
+    tags:
+      - '[0-9]*'   # 1.0.0, 2.3.1, etc.
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Get the previous tag (or empty if this is the first)
+          PREV_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || true)
+
+          if [ -n "$PREV_TAG" ]; then
+            NOTES=$(git log ${PREV_TAG}..HEAD --pretty=format:'* %s (%h)')
+            COMPARE="https://github.com/${{ github.repository }}/compare/${PREV_TAG}...${GITHUB_REF_NAME}"
+          else
+            NOTES=$(git log --pretty=format:'* %s (%h)')
+            COMPARE="https://github.com/${{ github.repository }}/commits/${GITHUB_REF_NAME}"
+          fi
+
+          {
+            echo "## What's Changed"
+            echo ""
+            echo "$NOTES"
+            echo ""
+            echo "**Full Changelog**: $COMPARE"
+          } > notes.md
+
+          gh release create "$GITHUB_REF_NAME" \
+            --title "Release $GITHUB_REF_NAME" \
+            --notes-file notes.md

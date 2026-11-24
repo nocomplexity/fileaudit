@@ -1,6 +1,17 @@
 # Change Log
 
-All notable changes to this project will be documented in this file.
+All notable changes to this project will be documented in this file. 
+See also Github [Release notes](https://github.com/nocomplexity/fileaudit/tags) for full details.
+
+## Version 0.2.6
+
+**Added**
+* Activated GitHub provenance action to generate a verifiable build record upon releasing a new version on [PyPI](https://pypi.org/project/fileaudit/).
+* Added an XML example notebook.
+
+**Documentation**
+* Updated project documentation.
+
 
 ## Version 0.2.5
 
